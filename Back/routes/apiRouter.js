@@ -1,0 +1,31 @@
+//import
+const express = require('express');
+const userCtrl = require('../Controlleurs/userCtrl');
+const postCtrl = require('../Controlleurs/postCtrl');
+const likeCtrl = require('../Controlleurs/likeCtrl')
+const cookieParser = require('cookie-parser');
+
+// Router
+exports.router = (()=>{
+    const apiRouter = express.Router();
+
+//route user
+apiRouter.route('/register').post(userCtrl.addUser);
+apiRouter.route('/login').post(userCtrl.login);
+apiRouter.route('/me/:id').get(userCtrl.getUserMe);
+apiRouter.route('/getUser/:id').get(userCtrl.getUser);
+apiRouter.route('/getAll').get(userCtrl.getAllUsers);
+apiRouter.route('/put').put(userCtrl.PutUser);
+apiRouter.route('/delete').delete(userCtrl.deleteUser);
+
+//route post 
+apiRouter.route('/new').post(postCtrl.CreatePublication);
+apiRouter.route('/getAllPosts').get(postCtrl.getAllPosts);
+apiRouter.route('/del').delete(postCtrl.deletePost);
+
+//route like
+apiRouter.route('/new/:id/like').post(likeCtrl.like);
+apiRouter.route('/new/:id/unlike').post(likeCtrl.unlike);
+
+return apiRouter;
+})();
