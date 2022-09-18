@@ -38,20 +38,14 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="./">Home</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./register">Inscrivez-vous</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./Trouvez">Mot de passe oublié</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./index">Article à ajouter</a>
-                  </li>
                   <li id="test" class="nav-item">
                     <a class="nav-link" href="./pagetext">Qualite Eau</a>
                   </li>
                 </ul>
-                <form class="form-inline">
+                <div class="dropdown-content">
+                  <a href="login"><i class="fa fa-fw fa-user"></i> Profil </a>
+                </div>
+                <!--<form class="form-inline">
                   <i class="fas fa-search" aria-hidden="true"></i>
                   <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
                     aria-label="Search">
@@ -60,10 +54,11 @@
                   <div class="dropdown-content">
                       <a href="login"><i class="fa fa-fw fa-user"></i> <p id="con">Se Connecter</p></a>
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
           </nav>
+          <br>
           <div class="row">
             <h1>HELLO WOLRD</h1>                                                                          
             <div class="row">
@@ -115,12 +110,12 @@
                           <input type="password" class="form-control" id="in" name="password">
                           <span class="erreur-message">erreur</span>
                         </div>
-                          <div class="mb-3 form-check">
+                          <div class="mb-3 form-check" id="ser">
                           <input type="checkbox" class="form-check-input" >
                           <label class="form-check-label" for="exampleCheck1">Se rappeler de moi</label>
                         </div>
                         <button type="submit" class="btn btn-primary" id="connect"a href="./index">Se Connecter</button></a>
-                          <p> <a href="./Trouvez">Mot de passe oublié ?</p></a>
+                          <p id="mot"> <a href="./Trouvez">Mot de passe oublié ?</p></a>
                           <div class="inscrit"><a href="./register">Vous n’avez pas de compte ? Inscrivez-vous</a></div>
                     </form>
                     <div class="ph">

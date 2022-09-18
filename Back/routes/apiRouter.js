@@ -21,11 +21,13 @@ apiRouter.route('/delete').delete(userCtrl.deleteUser);
 //route post 
 apiRouter.route('/new').post(postCtrl.CreatePublication);
 apiRouter.route('/getAllPosts').get(postCtrl.getAllPosts);
-apiRouter.route('/del').delete(postCtrl.deletePost);
+apiRouter.route('/getmyPost').get(postCtrl.getmyPost);
+apiRouter.route('/del/:id').delete(postCtrl.deletePost);
+apiRouter.route('/put/:id').put(postCtrl.PutPost);
 
 //route like
-apiRouter.route('/new/:id/like').post(likeCtrl.like);
-apiRouter.route('/new/:id/unlike').post(likeCtrl.unlike);
+apiRouter.route('/like/:id').post(likeCtrl.like);
+//apiRouter.route('/new/:id/unlike').post(likeCtrl.unlike);
 
 return apiRouter;
 })();

@@ -21,7 +21,7 @@ module.exports = {
         })
         .then(function(postFound) {
             if (postFound) {
-                models.Users.findOne({
+                models.User.findOne({
                     where: { id : userId }
                 })
                 .then(function(userFound) {

@@ -5,14 +5,12 @@ var localStorage = new LocalStorage('./scratch');
 
 
 exports.addUser = async (req, res) => {
-    console.log('-------- toto -------', req.body); 
     const data = {
         nom : req.body.nom,
         prenom : req.body.prenom,
         email : req.body.email,
         password  : req.body.password,
     };
-    console.log('-------- data -------', data); 
 
     fetch('http://localhost:8080/api/register', {
       
@@ -33,7 +31,6 @@ exports.addUser = async (req, res) => {
     })
     // Displaying results to console
     .then(json => {
-        console.log(json)
         if(!json.error)
             res.redirect('/login');
         else  
@@ -65,8 +62,6 @@ exports.logUser = async (req, res, next) => {
     // Displaying results to console
     .then(json => {
         localStorage.setItem('token', json.token);
-        console.log('token console', localStorage.getItem('token'));
-        // console.log('token console', json);
         if (localStorage.getItem('token')) {
             res.redirect('/profil')
             //res.render('profil')
@@ -108,15 +103,16 @@ exports.getUserByToken = async (req, res, next) => {
     // console.log('---toto---', req.params.id)
     // il faut recuperer le id depuis le token
     // const idByToken = 
-    const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
+    const myProfil = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
         headers: {
-            'Authorization': localStorage.getItem('token')// Token à récupérer
+            Authorization: localStorage.getItem('token')// Token à récupérer
         }
          });
 
-    const myJson = await response.json();
-    res.render('profil', { User: myJson });
-    return next();
+     moi = await myProfil.json();
+    //res.render('profil', { User: myJson });
+    //return //
+    next();
 }
 
 exports.getUserByTokenForMenu = async (req, res, next) => {
@@ -125,7 +121,7 @@ exports.getUserByTokenForMenu = async (req, res, next) => {
     // const idByToken = 
     const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
         headers: {
-            'Authorization': localStorage.getItem('token')// Token à récupérer
+            Authorization: localStorage.getItem('token')// Token à récupérer
         }
          });
 
@@ -178,6 +174,7 @@ exports.getUserByTokenForMenu = async (req, res, next) => {
   
       // Displaying results to console
       .then((json) => {
+
         res.redirect('/profil');
       });
   };

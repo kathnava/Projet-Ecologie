@@ -13,6 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       prenom: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       email: {
@@ -24,6 +25,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       isAdmin: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       createdAt: {

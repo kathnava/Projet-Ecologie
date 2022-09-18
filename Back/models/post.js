@@ -14,11 +14,15 @@ module.exports = (sequelize, DataTypes) => {
       models.Post.belongsTo(models.User,{
         as: 'user', foreignkey: 'userId'
     })
+    models.Post.hasMany(models.Like);
+
     }
   }
   Post.init({
+    userId: DataTypes.INTEGER,
     texte: DataTypes.STRING,
-    attachement: DataTypes.STRING
+    attachement: DataTypes.STRING,
+    likesCount: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Post',

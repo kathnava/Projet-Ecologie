@@ -7,7 +7,6 @@ var localStorage = new LocalStorage('./scratch');
 
 
 exports.addPost= async (req, res) => {
-    console.log('----------body----',req.body)
     fetch("http://localhost:8080/api/new", {
         
         // Adding method type
@@ -20,7 +19,7 @@ exports.addPost= async (req, res) => {
         // Adding body or contents to sen
         body: JSON.stringify({
             texte : req.body.texte,
-            attachement:req.body.attachement,
+            attachement: req.body.attachement,
         }),
     })
 
@@ -42,19 +41,18 @@ exports.getPostAll = async (req,res) => {
 
     })
     const userPost = await posts.json()
-    
+    console.log(userPost);
     const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
         headers: {
-            'Authorization': localStorage.getItem('token')// Token à récupérer
+            Authorization: localStorage.getItem('token')// Token à récupérer
         }
          });
 
-    const myUser = await response.json();
+    const moi = await response.json();
 
 
-    if(userPost){
-        console.log(userPost)
-        res.render('home', userPost)
+    if(userPost.success){
+        res.render('home',{me : moi , post: userPost  })
     }
     
 }
@@ -64,37 +62,75 @@ exports.getUserByToken = async (req, res, next) => {
 
     console.log('jy suis ');
     
-    // const response = await fetch('http://localhost:3500/api/me',{
-    //     headers: {
-    //         'Authorization':  localStorage.getItem('token')// Token à récupérer 
-    //     }
-    //  });
-    // const myJson = await response.json();
-    // req.user = myJson;
-    // console.log('User Info', req.user);
-    // return next();
+}
+
+
+exports.getmyPostFront = async (req,res) => {
+    const myPost = await fetch('http://localhost:8080/api/getmyPost',{
+        headers: {
+            Authorization: localStorage.getItem('token'),// Token à récupérer
+        },
+
+    })
+     userPost = await myPost.json()
+
+    if(userPost.success){
+        res.render('profil',{me : moi , post: userPost  })
+    }
     
 }
 
-/*
-exports.getUserById = async (req, res) => {
-    
-       fetch('http://localhost:3500/api/me',{
 
-    method:'GET',
+exports.deletePostFront = async (req, res) => {
 
-    headers: {
-        "Content-type": "application/json; charset=UTF-8"
-    })
+    let postId = req.params.id;
+   
 
-    .then(response => response.json())
-    // Displaying results to console
-    .then(json => {
-        console.log(json)
-        if(req.headers['authorization'])
-            res.redirect('/');
-        else  
-            next();
-    })
-    
-}*/
+  const response = await fetch(`http://localhost:8080/api/del/${req.params.id}`,
+    {
+      method: "DELETE",
+
+      headers: {
+
+        "Content-type": "application/json",
+
+        Authorization: localStorage.getItem("token"), // Token à récupérer
+
+      },
+    }
+  );
+
+  const myJson = await response.json();
+  console.log("delete-----demande",myJson)
+  res.redirect("/profil");
+
+}
+
+exports.UpdatePostFront = async (req, res) => {
+
+
+  const response = await fetch(`http://localhost:8080/api/put/${req.params.id}`,
+    {
+      method: "PUT",
+
+      body : JSON.stringify({
+        texte : req.body.texte,
+        attachement: req.body.attachement,
+      }),
+
+      headers: {
+
+        "Content-type": "application/json",
+
+        Authorization: localStorage.getItem("token"), // Token à récupérer
+
+      },
+    }
+  );
+
+  const myJson = await response.json();
+  console.log("update-----demande",myJson)
+  
+  res.redirect("/profil");
+
+};

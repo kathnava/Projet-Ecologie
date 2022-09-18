@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .textHome{
     width: 50%;
 }
@@ -132,6 +136,7 @@
 
 #test {
     animation: glowing 5s infinite;
+    /* margin-left: 100px; */
 }
 @keyframes glowing {
     0% {
@@ -164,7 +169,7 @@
     width:40%;
 }
 
- #con {
+#con {
     font-size: 15px;
 }
 
@@ -179,8 +184,6 @@
     flex-wrap: wrap;
 
 }
-
-
 
 .mileu{
     display:flex;
@@ -279,7 +282,7 @@
 }
 
 #in {
-    width: 60%;
+    width: 90%;
 }
 
 .form-inline {
@@ -297,16 +300,19 @@
 }
 .formLogIn {
     width: 60%;
+    padding: 20px;
+    height: 500px;
 }
 
 .Aqua {
     width: 100%;
-    height: 400px;
+    height: 500px;
     
 }
 
 .ph {
     border-radius: 10px;
+    height: 500px;
 }
 
 #ajoutphotp{
@@ -374,6 +380,274 @@
     
 }
 
+#touche {
+    margin-left: 100px;
+}
+
+
+.btn-group button {
+    background-color: #0d6efd; /* Green background */
+    border: 2px solid blue; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 90%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+    
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+    
+    /* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+#form1 {
+    display: none;
+}
+#form2 {
+    display: none;
+}
+#form3 {
+    display: none;
+   
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+}
+
+
+.container, .container-sm {
+    max-width: none; 
+}
+
+.navbar-toggler {
+    display: flex;
+}
+
+#form3 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.card-img-top img {
+    object-fit: cover;
+}
+
+.card-text {
+    font-size: 10px;
+}
+
+#but1 {
+    width: 1000px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
 @media screen and (max-width:900px) and (min-width:768px) {
+    .container {
+        position: relative;
+        display: inline-block;
+        }
+        .navbar-nav {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+          
+        .navbar-nava {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+        }
+          
+        .navbar-nava:hover {background-color: #ddd;}
+          
+        .container:hover .navbar-nav{display: block;}
+          
+        .container:hover .dropbtn {background-color: #3e8e41;} 
+
+.placeholder-wave {
+    display: none;
+}
+
+.placeholder-glow {
+   display: none;
+}
+
+#carouselExampleControls {
+    display: none;
+}
+.placeholder-wave {
+    display: none;
+}
+.ph {
+    display: none;
+}
+.blockquote-footer {
+    display: none;
+}
+.textHome {
+    margin-left: none;
+}
+.formLogIn {
+    padding: 20px;
+    height: auto;
+}
+#in {
+    width: 95%;
+}
+.mb-3 {
+   
+    margin-left: 10px;
+}
+
+.btn, btn-primary {
+    width: 92%;
+    margin-left: 3%;
+}
+#mot {
+    margin-left: 3%;
+}
+.inscrit {
+    margin-left: 3%;
+}
+h3 {
+    margin-right :120px;
+
+
+}
+.formLogIn {
+    height: auto;
+    width: 100%;
+}
+
+.container, .container-sm {
+    max-width: none; 
+}
+
+.dropdown-content a {
+    display: none;
+}
+
+.navbar-toggler{
+    display: inline-block;
+}
+
+}
+
+.navbar-nav {
+    
+    flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+
+    .placeholder-wave {
+        display: none;
+    }
+    .placeholder-glow {
+       display: none;
+    }
+    #carouselExampleControls {
+        display: none;
+    }
+    .placeholder-wave {
+        display: none;
+    }
+    .ph {
+        display: none;
+    }
+    .blockquote-footer {
+        display: none;
+    }
+    .textHome {
+        margin-left: none;
+    }
+    .formLogIn {
+        padding: 20px;
+    }
+    #in {
+        width: 95%;
+    }
+    .mb-3 {
+       
+        margin-left: 10px;
+    }
+    .btn, btn-primary {
+        width: 92%;
+        margin-left: 3%;
+    }
+    #mot {
+        margin-left: 3%;
+    }
+    .inscrit {
+        margin-left: 3%;
+    }
+    h3 {
+        margin-left: 10px;
+    }
+    #titre {
+         margin-left: 10px; 
+    }
+    .formLogIn {
+        height: auto;
+        width: 100%;
+    }
+    .container {
+        position: relative;
+        display: inline-block;
+    }
+    .navbar-nav {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .navbar-nav a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .navbar-nava:hover {background-color: #ddd;}
+      
+    .container:hover .navbar-nav{display: block;}
+      
+    .container:hover .dropbtn {background-color: #3e8e41;} 
+
+
+
+.container, .container-sm {
+     max-width: none; 
+}
+
+.dropdown-content a {
+    display: none;
+}
+
+.navbar-toggler{
+    display: inline-block;
+}
+
+
 
 }

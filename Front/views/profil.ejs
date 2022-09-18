@@ -1,95 +1,174 @@
 <%- include('./includes/header.ejs') %>
-<main class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function () {
+        $("#form1").toggle();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#btn2").click(function () {
+        $("#form2").toggle();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#btn3").click(function () {
+        $("#form3").toggle();
+      });
+    });
+  </script>
+
+  <main class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" id="barre">
-        <a class="navbar-brand" href="#"><Menu></Menu></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./">Home</a>
+              <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./register">Inscrivez-vous</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Trouvez">Mot de passe oublié</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./index">Article à ajouter</a>
-            </li>
-            <li id="test" class="nav-item">
-              <a class="nav-link" href="./pagetext">Qualite Eau</a>
+            <li  class="nav-item">
+              <a class="nav-link active" id="test" href="/pagetext">Qualite Eau</a>
             </li>
           </ul>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <a href="/profil" ><i class="fa fa-fw fa-user"></i> Profil </a>
           </div>
-          <div class="dropdown"><!--<a href="#"><img src="" alt="Avatar" class="avatar1"/></a>-->
-            <div class="dropdown-content">
-                <a href="/profil"><i class="fa fa-fw fa-user"></i> Profil </a>
-                <hr class="dropdown-divider">
-                <a href="/logout">Déconnexion</a>
-            </div>
+          <% if(locals.me){ %>
+            <%= me.nom %>
+              <%= me.prenom %>
+                <% } %>
+                  <hr class="dropdown-divider">
+                  <a href="/logout">Déconnexion</a>
+        </div>
       </div>
-      </nav>
-          <div class="column">
-            <h1>HELLO WOLRD</h1>                                                                          
-            <div class="column">
-                <figure class="textHome text-end">
-                  <h3>Connectez-Vous</h3>
-                  <figcaption class="blockquote-footer">
-                    HELLO WORLD <cite title="Source Title">This is My Project</cite>
-                  </figcaption>
-                </figure>
-                <form action="/new" method="post" id="new" onctype="multipart/form-data">
-                  <div class="input-group mb-3">
-                      <!--<span class="input-group-text" id="inputGroup-sizing-default">Message</span> -->
-                      <input type="text" name="texte" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message" autofocus>
-                  </div>
-                  <div class="mb-3">
-                      <label for="formFile" class="form-label"></label>
-                      <input class="form-control"  id="ajoutphotp"  type="file" name='attachement' id="formFile">  
-                  </div>
-                  <br>
-                  <div>
-                      <input type="submit" value="Publier" id="Publier"/><br>
-                  </div>
-                  <br>
-              </form>
-                    <% if(locals.User){ %>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Nom : <%= User.nom %></li> 
-                      <li class="list-group-item">Prénom : <%= User.prenom %></li>
-                      <li class="list-group-item">E-mail : <%= User.email %></li>
-                    </ul>
-                    <% } %>
-                    <br> 
-                    <form action="/profil" method="post" id="new" onctype="multipart/form-data">
-                      <div class="input-group mb-3">
-                          <!--<span class="input-group-text" id="inputGroup-sizing-default">Message</span> -->
-                          <input type="text" name="nom" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre nom" autofocus>
-                      </div>
-                      <br>
-                      <div class="input-group mb-3">
-                        <!--<span class="input-group-text" id="inputGroup-sizing-default">Message</span> -->
-                        <input type="text" name="prenom" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre prenom" autofocus>
-                    </div>
-                      <div>
-                          <input type="submit" value="Save changes" id="Publier"/><br>
-                      </div>
-                      <br>
-                  </form>
-                    <div class="col-12">
-                      <div class="vstack gap-2 col-md-5 mx-auto">
-                        <button type="button" class="btn btn-outline-secondary" id="annuler">Cancel</button>
-                      </div>
-                      <!--<a href="./profil.html"> <button type="button" class="btn btn-primary btn-lg" id="but1">Modifier</button></a>-->
-                  </div>  
-                  </div>
-                </div>
-              </div>
+    </nav>
+    <div class="column">
+      <h1>HELLO WOLRD</h1>
+      <div class="column">
+        <figure class="textHome text-end">
+          <h3>Connectez-Vous</h3>
+          <figcaption class="blockquote-footer">
+            HELLO WORLD <cite title="Source Title">This is My Project</cite>
+          </figcaption>
+        </figure>
+        <h3>Menu</h3>
+        <div class="btn-group">
+          <button id="btn1">Poster un article</button>
+        </div>
+        <div class="btn-group">
+          <button id="btn2">Modifier le profil</button>
+        </div>
+        <div class="btn-group">
+          <button id="btn3">Voir les posts</button>
+        </div>
+        <form action="/new" method="post" id="form1" onctype="multipart/form-data">
+          <div class="input-group mb-3">
+            <input type="text" name="texte" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message" autofocus>
           </div>
-    </main>
-</body>
-</html>
+          <div class="mb-3">
+            <label for="formFile" class="form-label"></label>
+            <input class="form-control" id="ajoutphotp" type="file" name='attachement' id="formFile">
+          </div>
+          <br>
+          <div>
+            <input type="submit" value="Publier" id="Publier" /><br>
+          </div>
+          <br>
+        </form>
+        <nav>
+          <% if(locals.me){ %>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nom : <%= me.nom %>
+              </li>
+              <li class="list-group-item">Prénom : <%= me.prenom %>
+              </li>
+              <li class="list-group-item">E-mail : <%= me.email %>
+              </li>
+            </ul>
+            <% } %>
+        </nav>
+      </div>
+      <br>
+      <div>
+        <form action="/profil" method="post" id="form2" onctype="multipart/form-data">
+          <div class="input-group mb-3">
+            <input type="text" name="nom" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre nom" autofocus>
+          </div>
+          <br>
+          <div class="input-group mb-3">
+            <input type="text" name="prenom" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre prenom" autofocus>
+          </div>
+          <div>
+            <input type="submit" value="Save changes" id="Publier" /><br>
+          </div>
+          <br>
+        </form>
+        <div class="album">
+       <div id="form3">
+              <% locals.post.success.reverse().map((post)=>{ %>
+                <% if(post.userId===locals.me.id){ %>
+                  <!--<div class="card" >
+                    <ul>
+                      <div>
+                          <img class="card-img-top" src="/img/< %= post.attachement %>" name="attachement" alt="Card image cap">
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">
+                          < %= post.texte %>
+                        </h6>
+                        <p class="card-text" name="texte"></p>
+                        <a href="/img/< %= post.attachement%>" name="attachement" id="but"
+                          class="btn btn-primary btn-lg"  id="but1">Afficher l'image</a>
+                      </div>
+                  </div>
+                  </ul>-->
+                 
+                    <div class="card-group">
+                      <div class="card" style="max-width: 18rem" >
+                        <img src="/img/<%= post.attachement %>" class="img-fluid h-50"  alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= post.texte %></h5>
+                          <p class="card-text"><%= post.texte %></p>
+                        </div>
+                          <form action="/profil/<%= post.id %>" method="post">
+                            <a href="/profil/<%= post.id %>"><button type="submit" class="btn btn-primary btn-sm">Supprimer</button></a>
+                          </form>
+                          <form action="/profil/put/<%= post.id %>" method="post">
+                            <input type="text" name="texte" placeholder="modifier post">
+                           <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+                          </form>
+                      </div>
+                    </div> 
+                    <% } %>
+                    <% }) %>
+                  </div>
+                  <hr>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="col-12">
+        <div class="vstack gap-2 col-md-5 mx-auto">
+          <button type="button" class="btn btn-outline-secondary" id="annuler">Cancel</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  </body>
+
+  </html>

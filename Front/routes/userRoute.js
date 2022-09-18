@@ -26,7 +26,7 @@ route.post('/new', postCtrlFront.addPost);
 route.get('/',postCtrlFront.getPostAll);
 
 const token = localStorage.getItem('token');
-console.log('HELLLLO TOKEN ', token);
+//console.log('HELLLLO TOKEN ', token);
 
 //LOGIN
 route.get('/login', (req ,res) => {
@@ -51,21 +51,29 @@ route.post('/register', userCtrlFront.addUser);
 
 
 //HOME
-route.get('/',userCtrlFront.getUserByTokenForMenu, postCtrlFront.getPostAll);
+route.get('/', userCtrlFront.getUserByToken, postCtrlFront.getPostAll);
+
+//Profil
+route.get('/profil', userCtrlFront.getUserByToken, postCtrlFront.getmyPostFront);
+
+//route.post('/profil', userCtrlFront.updateUser);
+route.get('/logout', userCtrlFront.logOut);
+
+route.post('/profil', userCtrlFront.getUserByToken, userCtrlFront.updateUser);
+route.route('/profil/:id').post(userCtrlFront.getUserByToken, postCtrlFront.deletePostFront);
+
+route.route('/profil/put/:id').post(userCtrlFront.getUserByToken, postCtrlFront.UpdatePostFront);
 
 /*route.get('/', (req, res) => {
     res.render('home');
   })*/
 
-//Profil
-route.get('/logout', userCtrlFront.logOut);
+
 
 /*route.get('/profil', (req,res) => {
     res.render('/../viewS/profil')});*/
 
-route.get('/profil', userCtrlFront.getUserByToken);
 
-route.post('/profil', userCtrlFront.updateUser);
 
 //POST LIKE
 //appRouter.route("/new/:id").post(likeCtrlFront.newLike)
