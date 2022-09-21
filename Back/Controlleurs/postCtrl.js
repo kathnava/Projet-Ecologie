@@ -105,22 +105,22 @@ module.exports = {
           attributes: ['id','userId', 'texte','attachement','likesCount'],
           where: { id: postId }
         })
-          .then((userFound) => {
-            done(null, userFound);
+          .then((postFound) => {
+            done(null, postFound);
           })
           .catch((err) => {
             return res.status(400).json({ error: 'Unable to verify publication' });
           });
       },
-      (userFound, done) => {
-        if (userFound) {
-          userFound.update({
-            texte: (texte ? texte : userFound.texte),
-            attachement: (attachement ? attachement : userFound.attachement),
+      (postFound, done) => {
+        if (postFound) {
+          postFound.update({
+            texte: (texte ? texte : postFound.texte),
+            attachement: (attachement ? attachement : postFound.attachement),
 
           })
-            .then((userFound) => {
-              done(userFound);
+            .then((postFound) => {
+              done(postFound);
             })
             .catch((err) => {
               res.status(500).json({ error: 'cannot update publication' });
@@ -131,8 +131,8 @@ module.exports = {
         }
       },
     ],
-      (userFound) => {
-        if (userFound) {
+      (postFound) => {
+        if (postFound) {
           res.status(200).json({ success: 'Publication successfuly modified' })
         }
         else {

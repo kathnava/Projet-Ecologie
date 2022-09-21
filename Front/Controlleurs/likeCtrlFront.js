@@ -5,7 +5,7 @@ let localStorage = new LocalStorage("./scratch");
 
 exports.newLike = async (req, res) => {
   await fetch(
-    `http://localhost:8080/api/new//like/${req.params.id}`,
+    `http://localhost:8080/api/like/${req.params.id}`,
     {
       // Adding method type
       method: "POST",
@@ -16,27 +16,26 @@ exports.newLike = async (req, res) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      credentials: "same-origin",
     }
   )
-    // Converting to JSON
-    .then((res) => {
-      return res.json();
-    })
+  .then(response => response.json())
 
-    // Displaying results to console
-    .then((json) => {
-      res.redirect("/home");
-    })
+// Displaying results to console
 
-    .catch((err) => {
-      console.log("ERR ----", err);
-    });
-};
+.then(json => {
+
+  //res.render('home',json)
+
+  console.log("like front",json)
+
+res.redirect('/')
+
+})
+}
 
 exports.unLike = async (req, res) => {
   await fetch(
-    `http://localhost:8080/api/new//like/${req.params.id}`,
+    `http://localhost:8080/api/unlike/${req.params.id}`,
     {
       // Adding method type
       method: "POST",
@@ -47,7 +46,6 @@ exports.unLike = async (req, res) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      credentials: "same-origin",
     }
   )
     // Converting to JSON
@@ -57,7 +55,7 @@ exports.unLike = async (req, res) => {
 
     // Displaying results to console
     .then((json) => {
-      res.redirect("/home");
+      res.redirect("/");
     })
 
     .catch((err) => {

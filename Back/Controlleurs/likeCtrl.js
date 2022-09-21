@@ -26,7 +26,7 @@ module.exports = {
                 })
                 .then(function(userFound) {
                     if (userFound) {
-                        models.like.findOne({
+                        models.Like.findOne({
                             where: {
                                 userId: userFound.id,
                                 postId: postId
@@ -34,7 +34,7 @@ module.exports = {
                         })
                         .then(function(likeFound){
                             if (!likeFound) {
-                                models.like.create({
+                                models.Like.create({
                                         userId: userFound.id,
                                         postId: postId,
                                         onclick:"return false"
@@ -82,12 +82,12 @@ module.exports = {
         })
         .then(function(postFound) {
             if (postFound) {
-                models.Users.findOne({
+                models.User.findOne({
                     where: { id : userId }
                 })
                 .then(function(userFound) {
                     if (userFound) {
-                        models.like.findOne({
+                        models.Like.findOne({
                             where: {
                                 userId: userFound.id,
                                 postId: postId
@@ -95,7 +95,7 @@ module.exports = {
                         })
                         .then(function(likeFound){
                             if (likeFound.dataValues.userId == userFound.id) {
-                                models.like.destroy({
+                                models.Like.destroy({
                                         where: { postId: postId }
                                 })
                                 postFound.update({

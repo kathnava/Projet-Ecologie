@@ -27,7 +27,8 @@ apiRouter.route('/put/:id').put(postCtrl.PutPost);
 
 //route like
 apiRouter.route('/like/:id').post(likeCtrl.like);
-//apiRouter.route('/new/:id/unlike').post(likeCtrl.unlike);
+
+apiRouter.route('/unlike/:id').post(likeCtrl.unlike);
 
 return apiRouter;
 })();

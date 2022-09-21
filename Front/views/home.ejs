@@ -1,6 +1,42 @@
 <%- include('./includes/header.ejs') %>
 <main class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="Menutete">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="./pagetext" id="test">Lien</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" id="barre">
         <a class="navbar-brand" href="#"><Menu></Menu></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,6 +47,9 @@
             <li class="nav-item" >
               <a class="nav-link active" aria-current="page" href="./">Home</a>
             </li>
+            <li class="nav-item" >
+              <a class="nav-link active" aria-current="page" href="login">Login</a>
+            </li>
             <li id="test" class="nav-item">
               <a class="nav-link" href="./pagetext">Qualite Eau</a>
             </li>
@@ -19,74 +58,81 @@
             <i class="fas fa-search" aria-hidden="true"></i>
             <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
               aria-label="Search">
-          </form>
-          <div class="dropdown">
+          </form> -->
+          <!-- <div class="dropdown">
             <div class="dropdown-content">
-              <% console.log(locals.post.success[0]) %> 
-              <% if(locals.me){ %>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><%= me.nom %></li> 
-                </ul>
-                <% } %>
-                <!--<a href="/login"><i class="fa fa-fw fa-user"></i> <p id="con">Se Connecter</p></a>-->
+              < % if(locals.me){ %>
                 <div class="dropdown-content">
                   <a href="/profil"><i class="fa fa-fw fa-user"></i> Profil </a>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">< %= me.nom %></li> 
+                    <li class="list-group-item">< %= me.prenom %></li>
+                  </ul>
                 </div>
                 <a href="/logout">Déconnexion</a>
+                < % } %>
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
       <div class="total" >
         <div class="partie1">
-          <% for (var i=locals.post.success.length-1 ; i>=0;  i-- ) { %>          
-                <div class="deux" >
-                  <div class="mileu" role="alert">
-                    <div class="ide">
-                      <%= locals.post.success.id %>
-                    </div>
-                  <div class="nom">
-                      <%= locals.post.success.userId %>
-                  </div>
-                </div>
-
-                <div class="card-group">
-                  <div class="card" style="max-width: 18rem" >
-                    <% if(locals.post.success[i].attachement != null){ %> 
-                    <img src="/img/<%= locals.post.success[i].attachement %>" class="img-fluid h-50" name="attachement" alt="...">
-                    <% } %>
+          <% for (var i=locals.post.success.length-1 ; i>=0;  i-- ) { %>    
+            <div class="card-group">
+              <div id="largeur" class="card" style="max-width: 18rem">
+                <% if (locals.post.success[i].attachement != ""){ %>
+                   <img id="image" style=" border-radius: 10px; height: 200px;" src="/img/<%=locals.post.success[i].attachement %>"  class="img-fluid H-50% W-50% Voir" alt="...">
+                <% } else { %> 
+                    <img id="image" style=" border-radius: 10px; height: 200px;" src="https://dummyimage.com/640x360/fff/aaa" class="img-fluid H-50% W-50% Voir " alt="...">
+                <% } %>       
+                <!-- <div class="card-group">
+                  <div class="card" id="card-home"style="max-width: 18rem"  >
+                    < % if(locals.post.success[i].attachement != null){ %> 
+                    <img src="/img/< %= locals.post.success[i].attachement %>" class="img-fluid h-50" name="attachement" alt="...">
+                    < % } %> -->
                     <div class="card-body">
                       <h5 class="card-title"><%= locals.post.success[i].texte %></h5>
-                      <p class="card-text"><%= locals.post.success[i].texte %></p>
+                      <a href="/img/<%= locals.post.success[i].attachement %>" name="attachement" id="but" class="btn btn-primary">Afficher l'image</a>
+                    <!-- </div> -->
+                    <div class="mileu" role="alert">
+                        <div class="ide">
+                          <%= locals.me.nom %>
+                        </div>
+                        <div class="nom">
+                          <%= locals.me.prenom %>
+                        </div>
                     </div>
-  
-                  </div>
-                </div> 
-
-
-                  <div class="card" style="width: 18rem;">
-                    <% if(locals.post.success[i].attachement != null){ %> 
-                      <img class="card-img-top" src="/img/<%= locals.post.success[i].attachement %>" name="attachement" alt="Card image cap">
-                   <% } %>
-                      <div class="card-body">
-                        <h5>titre du post</h5>
-                        <h5 class="card-title"><%= locals.post.success[i].texte %></h5>
-                        <p class="card-text" name="texte"></p>
-                        <a href="/img/<%= locals.post.success[i].attachement %>" name="attachement" id="but" class="btn btn-primary">Afficher l'image</a>
+                    <hr>
+                    <div class="ICO">
+                      <!-- <div><button onclick="clickCounter(1)" class="button" type="button">
+                          <i class="fa fa-thumbs-up" style="font-size:15px">
+                          <p>j'aime</p></i></button>
+                      </div> -->
+                      <!-- <div id="result"> -->
+                        <form action="/like/post/<%= locals.post.success[i].id%>" method="post">
+                          <p>  <%= locals.post.success[i].likesCount%></p> 
+                             <button> <i class="fa fa-thumbs-up" style="font-size:15px"></i></button>
+                        </form>
+                        <form action="/unlike/post/<%= locals.post.success[i].id%>" method="post">
+                          <p>  <%= locals.post.success[i].likesCount%></p> 
+                             <button> <i class="fa fa-thumbs-down" style="font-size:15px"></i></button>
+                        </form>
                       </div>
-                      <hr>
-                      <div class="ICO">
-                          <div><button onclick="clickCounter(1)" class="button" type="button"><i class="fa fa-thumbs-up" style="font-size:15px"><p>j'aime</p></i></button></div>
-                          <div id="result"></div>
-                          <div><button onclick="discounter(1)" class="button" type="button"><i class="fa fa-thumbs-down" style="font-size:15px"><p>je n'aime pas</p></i></button></div>
-                          <div id="result1"></div>
-                      </div>  
-                  </div>
-          <% } %>
+                      <!-- <div><button onclick="discounter(1)" class="button" type="button">
+                          <i class="fa fa-thumbs-down" style="font-size:15px">
+                          <p>je n'aime pas</p></i></button>
+                      </div>
+                      <div id="result1">
+                      </div> -->
+                      
+                    </div>  
+                </div> 
+              </div>
+          <% } %>  
           </div>      
         </div>
-      </div>
       </main>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
   </html>

@@ -20,6 +20,7 @@ exports.addPost= async (req, res) => {
         body: JSON.stringify({
             texte : req.body.texte,
             attachement: req.body.attachement,
+            likesCount: req.body.likescount,
         }),
     })
 

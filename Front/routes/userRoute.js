@@ -64,6 +64,9 @@ route.route('/profil/:id').post(userCtrlFront.getUserByToken, postCtrlFront.dele
 
 route.route('/profil/put/:id').post(userCtrlFront.getUserByToken, postCtrlFront.UpdatePostFront);
 
+route.route('/like/post/:id').post(likeCtrlFront.newLike);
+route.route('/unlike/post/:id').post(likeCtrlFront.unLike);
+
 /*route.get('/', (req, res) => {
     res.render('home');
   })*/
