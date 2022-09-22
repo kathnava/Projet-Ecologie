@@ -1,94 +1,6 @@
 <%- include('./includes/header.ejs') %>
-  <script>
-    $(document).ready(function () {
-      $("#btn1").click(function () {
-        $("#form1").toggle();
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      $("#btn2").click(function () {
-        $("#form2").toggle();
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      $("#btn3").click(function () {
-        $("#form3").toggle();
-      });
-    });
-  </script>
-
+<% console.log(locals); %> 
   <main class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login">Login</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="./pagetext" id="test">Lien</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid" id="barre">
-        <a class="navbar-brand" href="#">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" id="test" href="/pagetext">Qualite Eau</a>
-            </li>
-          </ul>
-        </div> -->
-        <!-- <div class="dropdown">
-          <div class="dropdown-content">
-            <a href="/profil"><i class="fa fa-fw fa-user"></i> Profil </a>
-          </div>
-          <% if(locals.me){ %>
-            <%= me.nom %>
-              <%= me.prenom %>
-                <% } %>
-                  <hr class="dropdown-divider">
-                  <a href="/logout">Déconnexion</a>
-        </div>
-      </div>
-    </nav> -->
     <div class="column">
       <h1>HELLO WOLRD</h1>
       <div class="column">
@@ -98,17 +10,6 @@
             HELLO WORLD <cite title="Source Title">This is My Project</cite>
           </figcaption>
         </figure>
-        <div class="trois">
-        <h3>Menu</h3>
-        <div class="btn-group">
-          <button id="btn1">Poster un article</button>
-        </div>
-        <div class="btn-group">
-          <button id="btn2">Modifier le profil</button>
-        </div>
-        <div class="btn-group">
-          <button id="btn3">Masquer les posts</button>
-        </div>
         <form action="/new" method="post" id="form1" onctype="multipart/form-data">
           <div class="input-group mb-3">
             <input type="text" name="texte" class="form-control" aria-label="Sizing example input"
@@ -124,36 +25,8 @@
           </div>
           <br>
         </form>
-        <nav>
-          <% if(locals.me){ %>
-            <ul class="list-group list-group-flush" id="profile">
-              <li class="list-group-item">Nom : <%= locals.me.nom %>
-              </li>
-              <li class="list-group-item">Prénom : <%= locals.me.prenom %>
-              </li>
-              <li class="list-group-item">E-mail : <%= locals.me.email %>
-              </li>
-            </ul>
-            <% } %>
-        </nav>
       </div>
       <br>
-      <div>
-        <form action="/profil" method="post" id="form2" onctype="multipart/form-data">
-          <div class="input-group mb-3">
-            <input type="text" name="nom" class="form-control" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre nom" autofocus>
-          </div>
-          <br>
-          <div class="input-group mb-3">
-            <input type="text" name="prenom" class="form-control" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre prenom" autofocus>
-          </div>
-          <div>
-            <input type="submit" value="Save changes" id="Publier" /><br>
-          </div>
-          <br>
-        </form>
         <div class="album">
           <div id="form3">
             <% locals.post.success.reverse().map((post)=>{ %>
@@ -179,7 +52,6 @@
                       <input type="text" name="texte" placeholder="modifier le texte">
                       <br>
                       <br>
-                      <!-- <a href="/profil/< %= post.id %>"> -->
                         <input class="form-control form-control-sm" id="formFileSm" type="file" name="attachement">
                         <br>
                         <button type="submit" class="btn btn-primary btn-sm">Valider le nouveau post</button>

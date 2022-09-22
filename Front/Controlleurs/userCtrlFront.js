@@ -82,27 +82,8 @@ exports.logOut  = async(req, res, next) => {
     res.redirect('/login')
 }
 
-// exports.getUserByToken = async (req, res, next) => {
- 
-//     console.log('---zak---', req.params.id)
-//     // il faut recuperer le id depuis le token 
-//     // const idByToken = 
-//     const response = await fetch(`http://localhost:8080/api/getUserMe/${req.params.id}`, {
-//         headers: {
-//             'Authorization': localStorage.getItem('token')// Token à récupérer 
-//         }
-//     });
-//     const myJson = await response.json();
-//     res.render('profil', { user: myJson });
-    
-//     return next();
-
-// }
-
 exports.getUserByToken = async (req, res, next) => {
-    // console.log('---toto---', req.params.id)
-    // il faut recuperer le id depuis le token
-    // const idByToken = 
+
     const myProfil = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
         headers: {
             Authorization: localStorage.getItem('token')// Token à récupérer
@@ -110,9 +91,44 @@ exports.getUserByToken = async (req, res, next) => {
          });
 
      moi = await myProfil.json();
-    //res.render('profil', { User: myJson });
-    //return //
+
     next();
+}
+
+exports.showPageUpdateUser = async (req, res, next) => { 
+    res.render('modifierleprofil')
+}
+
+exports.updateUser = async (req, res, next) => {
+
+    console.log('on est là')
+
+    fetch(`http://localhost:8080/api/put`, {
+      // Adding method type
+      method: "PUT",
+  
+      // Adding body or contents to send
+      body: JSON.stringify({
+        nom: req.body.nom,
+        prenom: req.body.prenom,
+      }),
+
+  
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json",
+        Authorization: localStorage.getItem("token"), //Token à récupérer
+      },
+    })
+      // Converting to JSON
+      .then((response) => response.json())
+  
+      // Displaying results to console
+      .then((json) => {
+        console.log(json);
+
+        res.redirect('/profil/modifierleprofil');
+      });
 }
 
 exports.getUserByTokenForMenu = async (req, res, next) => {
@@ -129,53 +145,20 @@ exports.getUserByTokenForMenu = async (req, res, next) => {
     res.render('home', { User: myJson });
     return next();
 }
+  
+  exports.getMe = async (req,res) => {
 
-/*exports.getUserProfile = async (req, res) => {
-    // recupere les infos user
-    const userInfo = await fetch(
-      `http://localhost/8080/api/getUserMe`,
-      {
+    const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
         headers: {
-          Authorization: localStorage.getItem("token"), // Token à récupérer
-        },
-      }
-    );
-    const myProfil = await userInfo.json();
+            Authorization: localStorage.getItem('token')// Token à récupérer
+        }
+         });
 
-    res.render("profil", myProfil);
-    return next();
-  
-    if (myProfil) {
-      
-    } else {
-      res.redirect("/index");
+    const moi = await response.json();
+
+
+    if(userPost.success){
+        res.render('home',{me : moi , post: userPost  })
     }
-  };*/
-
-  exports.updateUser = async (req, res) => {
-    fetch(`http://localhost:8080/api/put`, {
-      // Adding method type
-      method: "PUT",
-  
-      // Adding body or contents to send
-      body: JSON.stringify({
-        nom: req.body.nom,
-        prenom: req.body.prenom,
-      }),
-  
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json",
-        Authorization: localStorage.getItem("token"), //Token à récupérer
-      },
-    })
-      // Converting to JSON
-      .then((response) => response.json())
-  
-      // Displaying results to console
-      .then((json) => {
-
-        res.redirect('/profil');
-      });
-  };
-  
+    
+}

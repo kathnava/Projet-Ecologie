@@ -56,16 +56,20 @@ route.get('/', userCtrlFront.getUserByToken, postCtrlFront.getPostAll);
 //Profil
 route.get('/profil', userCtrlFront.getUserByToken, postCtrlFront.getmyPostFront);
 
-//route.post('/profil', userCtrlFront.updateUser);
 route.get('/logout', userCtrlFront.logOut);
 
-route.post('/profil', userCtrlFront.getUserByToken, userCtrlFront.updateUser);
 route.route('/profil/:id').post(userCtrlFront.getUserByToken, postCtrlFront.deletePostFront);
 
 route.route('/profil/put/:id').post(userCtrlFront.getUserByToken, postCtrlFront.UpdatePostFront);
 
 route.route('/like/post/:id').post(likeCtrlFront.newLike);
 route.route('/unlike/post/:id').post(likeCtrlFront.unLike);
+
+route.route('/profil/update').post(userCtrlFront.getUserByToken, userCtrlFront.updateUser );
+//route.route('/profil/update').post(userCtrlFront.updateUser);
+route.get('/profil/update', userCtrlFront.getUserByToken, userCtrlFront.showPageUpdateUser );
+
+
 
 /*route.get('/', (req, res) => {
     res.render('home');

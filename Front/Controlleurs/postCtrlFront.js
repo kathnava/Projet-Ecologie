@@ -102,7 +102,7 @@ exports.deletePostFront = async (req, res) => {
   );
 
   const myJson = await response.json();
-  console.log("delete-----demande",myJson)
+
   res.redirect("/profil");
 
 }

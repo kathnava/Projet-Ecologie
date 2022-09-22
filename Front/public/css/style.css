@@ -319,15 +319,17 @@
     width: 50%;
 }
 
+
 #Publier {
     background-color: #5A95EE;
-    width: 13%;
-    height: 18%;
+    /* width: 13%; */
+    /* height: 18%; */
     color: white;
     border: none;
     font-size: 1rem;
     vertical-align: middle;
     padding: .375rem .75rem;
+    margin-top: 1rem;
 }
 
 /*le button pour modifier image*/
@@ -487,6 +489,47 @@
     margin-top: 25px;
 }
 
+#IDLIKE {
+    margin-left:25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#IDDISLIKE {
+    margin-left:25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.MP {
+    border: 1px solid;
+    border-radius: 2%;
+    margin: auto;
+    width: 50%;
+    margin-top: 20%;
+    box-shadow: 10px 10px 10px 10px #e3e3e3;
+}
+
+.input-group {
+    /* position: relative; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-items: stretch; */
+    /* width: 50%; */
+    /* margin-top: 20px; */
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.MOPR {
+    margin-left: 450px;
+    margin-top: 200px;
+}
 
 @media screen and (max-width:900px) and (min-width:768px) {
     .container {
@@ -784,19 +827,13 @@ H1 {
     margin-left: 10%;
 }
 
-/* .ensemable {
-    display: flex;
-    flex-direction: column;
-} */
+
 
 .album {
     display: flex;
     flex-direction: column;
 }
-/* 
-#largeur {
-    max-width: 25rem !important;
-} */
+
 
 #image {
     border-radius: 10px;
@@ -818,7 +855,6 @@ H1 {
 }
 
 button, input, optgroup, select, textarea {
-    /* margin: 0; */
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -831,7 +867,6 @@ button, input, optgroup, select, textarea {
 
 #card-home {
     max-width: 40rem !important;
-    /* margin-bottom: 25px; */
 }
 
 .card {
@@ -850,31 +885,39 @@ button, input, optgroup, select, textarea {
 .partie1{
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     gap: 20px;
 
 }
 
-/* .card {
-    margin-bottom: 10px!important;
-} */
 
 .card-group {
     margin-bottom: 10px!important;
 }
 
-/* .navbar {
-    /* position: relative;
-    display: flex;
-    flex-wrap: wrap; 
-    align-items: center;
-    justify-content: space-between;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-} */
 
 #Menutete {
     margin-bottom: 40px;
 }
 
+.ICO {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+#IDLIKE {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#IDDISLIKE {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+}
+.container {
+    margin-top: 30px;
+}
 }

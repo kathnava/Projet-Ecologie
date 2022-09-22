@@ -175,46 +175,7 @@ module.exports = {
         res.status(400).json({ error: 'An error occurred' });
       });
   },
-  //  getmyPost: (req, res) => {
-  //   //let headerAuth = req.cookies.auth;
-  //   let headerAuth = req.headers["authorization"];
-  //   let userId = jwtUtils.getUserId(headerAuth);
-
-  //   console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", userId);
-
-  //   if (userId < 0) {
-  //     return res.status(400).json({ error: "An error occured mauvais token" });
-  //   }
-
-  //   models.User.findOne({
-  //     attributes: ["id", "nom", "prenom", "email"],
-  //     where: { id: userId },
-  //   })
-  //     .then(function (userFound) {
-  //       if (userFound) {
-  //         models.Post
-  //           .findAll({
-  //             attributes: ["id", "userId", "attachement", "texte"],
-  //             where: { userId: userId },
-  //           })
-  //           .then(function (postFound) {
-  //             if (postFound) {
-  //               return res.status(200).json({ success: postFound });
-  //             } else {
-  //               return res.status(403).json({ error: "vous avez aucun post" });
-  //             }
-  //           })
-  //           .catch(function (error) {
-  //             return res.status(404).json({ error: "post not found" });
-  //           });
-  //       } else {
-  //         return res.status(403).json({ error: "invalid user" });
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       return res.status(500).json({ error: "unable to verify user" });
-  //     });
-  // },
+  
   getmyPost: (req, res) => {
 
     var headerAuth = req.headers['authorization'];
