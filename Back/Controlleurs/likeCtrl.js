@@ -70,7 +70,6 @@ module.exports = {
     unlike: function(req, res) {
         let headerAuth = req.headers['authorization'];
         let userId = jwtUtils.getUserId(headerAuth);
-
         let postId = req.params.id;
 
         if (postId <= 0) {
@@ -101,6 +100,7 @@ module.exports = {
                                 postFound.update({
                                     likesCount: postFound.likesCount - 1
                                 })
+                               
                                 return res.status(200).json({ success: "you unliked the post" });
                                 // postFound.addUser(userFound)
                             } else {
@@ -126,7 +126,5 @@ module.exports = {
         })
     },
 
-    // listLikes: function(req, res) {
-
-    // }
+    
 }

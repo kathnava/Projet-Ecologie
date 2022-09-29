@@ -12,10 +12,11 @@
       </ul>
       <% } %>
   </nav>
+  
   <div class="MOPR">
-    
-    <form action="/profil/update" method="post">
-      <h5>Modifier vos coordonnées toto <h5>
+    <div class="cadre">
+    <form action="/profil/update" method="post" id="PR">
+      <h5>Modifier vos coordonnées <h5>
         <br>
       <div class="input-group mb-3">
         <input type="text" name="nom" class="form-control" aria-label="Sizing example input"
@@ -27,8 +28,11 @@
           aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre prenom" autofocus>
       </div>
       <div>
-        <button type="submit" value="Save changes">Save changes</button><br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Save changes">
       </div>
       <br>
     </form>
+    <a href="/profil"><i class='fas fa-user-alt' style: font-size: 30px></i></a>
   </div>
+</div>

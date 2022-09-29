@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.Post.belongsTo(models.User,{
-        as: 'user', foreignkey: 'userId'
+        as: 'user', foreignkey: 'userId',
+        onDelete: 'CASCADE'
     })
     models.Post.hasMany(models.Like);
 

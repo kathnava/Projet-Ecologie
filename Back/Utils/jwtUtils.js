@@ -32,6 +32,8 @@ module.exports = {
             if(jwtToken != null) userId = jwtToken.userId;
           } catch(err) { }
         }
+        console.log('-------', userId)
         return userId;
+       
     }  
 }

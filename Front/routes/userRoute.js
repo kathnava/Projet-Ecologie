@@ -5,6 +5,7 @@ const route = express.Router();
 const userCtrlFront = require('../Controlleurs/userCtrlFront');
 const postCtrlFront = require('../Controlleurs/postCtrlFront');
 const likeCtrlFront = require('../Controlleurs/likeCtrlFront');
+const AdminCtrlFront = require('../Controlleurs/AdminCtrlFront');
 const multer = require ('multer');
 const path = require('path');
 //const appRouter = express.Router();
@@ -39,6 +40,7 @@ route.get('/login', (req ,res) => {
     }*/
     res.render('../views/index')
 });
+
 route.post('/login', userCtrlFront.logUser)
 
 
@@ -58,17 +60,42 @@ route.get('/profil', userCtrlFront.getUserByToken, postCtrlFront.getmyPostFront)
 
 route.get('/logout', userCtrlFront.logOut);
 
-route.route('/profil/:id').post(userCtrlFront.getUserByToken, postCtrlFront.deletePostFront);
+// route.route('/profil/:id').post(userCtrlFront.getUserByToken, postCtrlFront.deletePostFront);
 
+// Delete post dans profil 
+route.route('/profil/DeletePost/:id').post( postCtrlFront.deletePostFront);
+route.route('/profil/DeletePost').get(userCtrlFront.getUserByToken, postCtrlFront.getmyPostFrontPourDelete, postCtrlFront.showPageDeletePost);
+
+// Update Post dans Profil 
 route.route('/profil/put/:id').post(userCtrlFront.getUserByToken, postCtrlFront.UpdatePostFront);
 
+// like et dislike 
 route.route('/like/post/:id').post(likeCtrlFront.newLike);
 route.route('/unlike/post/:id').post(likeCtrlFront.unLike);
 
-route.route('/profil/update').post(userCtrlFront.getUserByToken, userCtrlFront.updateUser );
-//route.route('/profil/update').post(userCtrlFront.updateUser);
+// Modifier le profil 
+route.post('/profil/update',userCtrlFront.getUserByToken, userCtrlFront.updateUser );
 route.get('/profil/update', userCtrlFront.getUserByToken, userCtrlFront.showPageUpdateUser );
 
+// Ajouter un post 
+route.post('/profil/newpost', userCtrlFront.getUserByToken, postCtrlFront.addPost );
+route.get('/profil/newpost', userCtrlFront.getUserByToken, postCtrlFront.showPageNewPost );
+
+// Afficher la page ADMIN
+// route.post('/admin', AdminCtrlFront.getAllUserFront);
+route.get('/admin', (req,res)=>{
+    res.render('../views/admin')
+} );
+
+// Admin afficher les users 
+route.get('/lesutilisateurs', AdminCtrlFront.getAllUtilisateursFront);
+
+// Admin supprimer les users 
+route.post('/lesutilisateurs/:id', AdminCtrlFront.deleteUserFront);
+route.get('/lesutilisateurs', AdminCtrlFront.showPageLesUsers);
+
+// Admin afficher tous les posts de tous les users 
+route.get('/lespost', userCtrlFront.getUserByToken, AdminCtrlFront.getPostAllByAdmin);
 
 
 /*route.get('/', (req, res) => {
@@ -76,22 +103,9 @@ route.get('/profil/update', userCtrlFront.getUserByToken, userCtrlFront.showPage
   })*/
 
 
-
 /*route.get('/profil', (req,res) => {
     res.render('/../viewS/profil')});*/
 
-
-
-//POST LIKE
-//appRouter.route("/new/:id").post(likeCtrlFront.newLike)
-//appRouter.route("/new/unlike/:id").post(likeCtrlFront.unLike)
-
-
-
-
-
-//route.get('/pagetext', (req,res) => {
-    //res.redirect ('/pagetext')});
 
 module.exports = route;
 

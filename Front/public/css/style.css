@@ -67,6 +67,10 @@
     padding: 20px;
     border-radius: 10px;
     border: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-img-top {
@@ -81,6 +85,15 @@
 
 .card-body {
     margin-left: 20px;
+}
+
+.card-group {
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    box-shadow: #ccc;
+    box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
+    -webkit-box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
+    -moz-box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
 }
 
 .btn, btn-primary btn-lg {
@@ -183,6 +196,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .mileu{
@@ -253,7 +267,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    width: 50%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -363,6 +377,7 @@
     flex-direction: row;
     gap: 25px;
     margin-bottom: 25px;
+ 
 }
 
 .deux {
@@ -510,14 +525,7 @@
     box-shadow: 10px 10px 10px 10px #e3e3e3;
 }
 
-.input-group {
-    /* position: relative; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* align-items: stretch; */
-    /* width: 50%; */
-    /* margin-top: 20px; */
-}
+
 
 .input-group>.form-control, .input-group>.form-select {
     position: relative;
@@ -527,8 +535,131 @@
 }
 
 .MOPR {
-    margin-left: 450px;
+    /* margin-left: 450px;
     margin-top: 200px;
+    background-image: url("requingeant.jpg");
+    border: #0d6efd 2px; */
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-image: url(giphy.gif);
+}
+
+#PR {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+
+
+.posterpost {
+    width: 80%;
+    height: auto;
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+#coeur:focus {
+  color: red;
+
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+button:hover{
+    border: none;
+    background: transparent;
+    color: red;
+}
+
+
+#posterpost {
+    padding : 10% 20% 10% 20%;
+    
+}
+
+.buttonpublier {
+    width: 20%;
+}
+
+.encadre {
+    border:2px blue;
+    background-color: #e3e3e3;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.container {
+    margin-top: 3rem;
+    
+}
+
+.cadre {
+    width: 80%;
+    background-color: #cccccc;
+}
+
+#form3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+#MyProfilIcon {
+    font-size: 30px;
+    background: red;
+    animation: mymove 5s infinite;
+}
+@keyframes mymove {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.Commande {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+}
+
+#Commandes {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    align-items: center;
+    text-align: center;
+}
+
+.HR {
+    margin-bottom: 5%!important;
+    height: 5px!important;
+    border-width: 0!important;
+    color:gray!important;
+    background-color:gray!important;
+}
+
+.hr {
+    display: none;
+}
+
+.button1 {
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.button2 {
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
 @media screen and (max-width:900px) and (min-width:768px) {
@@ -676,8 +807,11 @@ H1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-bottom: 25px;
+    /* gap: 25px; */
+    /* margin-bottom: 25px; */
+    background: url(plante.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .partie1 {
@@ -685,6 +819,7 @@ H1 {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 100px;
+    justify-content: space-around;
 }
 
 #Menutete {
@@ -697,6 +832,10 @@ H1 {
     width: 50rem!important;
     /* object-fit: cover; */
 }  
+
+.container {
+    margin-top: 3rem;
+}
 }
 
 
@@ -820,14 +959,6 @@ H1 {
     justify-content: center;
 }  
 
-#form3 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-left: 10%;
-}
-
-
 
 .album {
     display: flex;
@@ -892,6 +1023,7 @@ button, input, optgroup, select, textarea {
 
 .card-group {
     margin-bottom: 10px!important;
+   
 }
 
 

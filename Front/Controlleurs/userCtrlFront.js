@@ -127,7 +127,7 @@ exports.updateUser = async (req, res, next) => {
       .then((json) => {
         console.log(json);
 
-        res.redirect('/profil/modifierleprofil');
+        res.redirect('/profil/update');
       });
 }
 
@@ -162,3 +162,4 @@ exports.getUserByTokenForMenu = async (req, res, next) => {
     }
     
 }
+

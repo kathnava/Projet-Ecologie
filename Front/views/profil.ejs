@@ -1,34 +1,17 @@
 <%- include('./includes/header.ejs') %>
+<div>
+
+</div>
 <% console.log(locals); %> 
   <main class="container">
     <div class="column">
       <h1>HELLO WOLRD</h1>
       <div class="column">
-        <figure class="textHome text-end">
-          <h3>Connectez-Vous</h3>
-          <figcaption class="blockquote-footer">
-            HELLO WORLD <cite title="Source Title">This is My Project</cite>
-          </figcaption>
-        </figure>
-        <form action="/new" method="post" id="form1" onctype="multipart/form-data">
-          <div class="input-group mb-3">
-            <input type="text" name="texte" class="form-control" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message" autofocus>
-          </div>
-          <div class="mb-3">
-            <label for="formFile" class="form-label"></label>
-            <input class="form-control" id="ajoutphotp" type="file" name='attachement' id="formFile">
-          </div>
-          <br>
-          <div>
-            <input type="submit" value="Publier" id="Publier" /><br>
-          </div>
-          <br>
-        </form>
       </div>
       <br>
         <div class="album">
           <div id="form3">
+           
             <% locals.post.success.reverse().map((post)=>{ %>
               <% if(post.userId===locals.me.id){ %>
                 <div class="card-group">
@@ -43,11 +26,11 @@
                         <%= post.texte %>
                       </h5>
                     </div>
-                    <form action="/profil/<%= post.id %>" method="post">
-                      <a href="/profil/<%= post.id %>">
+                    <!-- <form action="/profil/< %= post.id %>" method="post">
+                      <a href="/profil/< %= post.id %>">
                         <button type="submit" class="btn btn-primary btn-sm">Supprimer le post complet</button>
                       </a>
-                    </form>
+                    </form> -->
                     <form action="/profil/put/<%= post.id %>" method="post">
                       <input type="text" name="texte" placeholder="modifier le texte">
                       <br>
@@ -68,11 +51,6 @@
     </div>
       <br>
       <br>
-      <div class="col-12">
-        <div class="vstack gap-2 col-md-5 mx-auto">
-          <button type="button" class="btn btn-outline-secondary" id="annuler">Cancel</button>
-        </div>
-      </div>
     </div>
     </div>
   </main>

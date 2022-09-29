@@ -4,6 +4,7 @@ const userCtrl = require('../Controlleurs/userCtrl');
 const postCtrl = require('../Controlleurs/postCtrl');
 const likeCtrl = require('../Controlleurs/likeCtrl')
 const cookieParser = require('cookie-parser');
+const AdminCtrl = require('../Controlleurs/AdminCtrl');
 
 // Router
 exports.router = (()=>{
@@ -16,7 +17,11 @@ apiRouter.route('/me/:id').get(userCtrl.getUserMe);
 apiRouter.route('/getUser/:id').get(userCtrl.getUser);
 apiRouter.route('/getAll').get(userCtrl.getAllUsers);
 apiRouter.route('/put').put(userCtrl.PutUser);
-apiRouter.route('/delete').delete(userCtrl.deleteUser);
+// apiRouter.route('/delete/:id').delete(userCtrl.deleteUser);
+
+// Route Admin 
+apiRouter.route('/deleteUserByAdmin/:id').delete(AdminCtrl.deleteUserByAdmin);
+
 
 //route post 
 apiRouter.route('/new').post(postCtrl.CreatePublication);

@@ -71,40 +71,45 @@ exports.getmyPostFront = async (req,res) => {
         headers: {
             Authorization: localStorage.getItem('token'),// Token à récupérer
         },
-
     })
      userPost = await myPost.json()
-
     if(userPost.success){
         res.render('profil',{me : moi , post: userPost  })
     }
-    
 }
 
+exports.getmyPostFrontPourDelete = async (req,res) => {
+
+  const myPost = await fetch('http://localhost:8080/api/getmyPost',{
+      headers: {
+          Authorization: localStorage.getItem('token'),// Token à récupérer
+      },
+  })
+   userPost = await myPost.json()
+
+  if(userPost.success){
+      res.render('DeletePost',{me : moi , post: userPost  })
+  }
+
+}
 
 exports.deletePostFront = async (req, res) => {
-
+    
     let postId = req.params.id;
-   
 
   const response = await fetch(`http://localhost:8080/api/del/${req.params.id}`,
     {
       method: "DELETE",
-
       headers: {
-
         "Content-type": "application/json",
-
         Authorization: localStorage.getItem("token"), // Token à récupérer
 
       },
     }
   );
-
   const myJson = await response.json();
-
-  res.redirect("/profil");
-
+  console.log('MYSON',myJson)
+  res.redirect("/profil/DeletePost");
 }
 
 exports.UpdatePostFront = async (req, res) => {
@@ -135,3 +140,13 @@ exports.UpdatePostFront = async (req, res) => {
   res.redirect("/profil");
 
 };
+
+
+exports.showPageNewPost = async (req, res, next) => { 
+  res.render('Poster')
+}
+
+exports.showPageDeletePost = async (req, res, next) => { 
+  
+  res.render('DeletePost')
+}

@@ -170,7 +170,7 @@ module.exports = {
     }
     models.User.findOne({
 
-      attributes: ['id', 'nom', 'prenom', 'email'],
+      attributes: ['id', 'nom', 'prenom', 'email', 'isAdmin'],
       where: { id: userId }
     })
       .then((user) => {
@@ -242,30 +242,66 @@ module.exports = {
       });
   },
 
-  deleteUser: (req, res) => {
-    let headerAuth = req.headers['authorization'];
-    let userId = jwtUtils.getUserId(headerAuth);
+//   deleteUser:(req, res)=> {
+//     let headerAuth = req.headers['authorization'];
+//      let userId = jwtUtils.getUserId(headerAuth);
+//     // let userId = req.params.id;
 
-    asyncLib.waterfall([
-      (done) => {
-        models.User.destroy({
-          where: { id: userId }
-        })
-          .then((userFound) => {
-            done(userFound)
-          })
-          .catch((err) => {
-            return res.status(400).json({ 'error': 'An error occurred' });
-          });
-      }],
-      (userFound) => {
-        if (userFound) {
-          return res.status(200).json({ 'success': `User successfuly deleted` })
-        }
-        else {
+//     console.log('-------userId ', userId);
 
-          return res.status(404).json({ 'error': 'User was not found' });
-        }
-      });
-  },
+//     asyncLib.waterfall([
+//         (done) => {
+//         models.User.destroy({
+//             attributes: ['id', 'nom','prenom','email','password','isAdmin'],
+//             where: { id: userId }
+//         })
+//         .then((userFound) => {
+
+//           console.log('-------userFound ', userFound);
+
+//             done(userFound)
+//         })
+//         .catch((err) => {
+//             return res.status(400).json({ 'error': 'An error occurred'+ err });
+//         });
+//       }
+//     ],
+//     (userFound) => {
+//         if (userFound) {
+//             return res.status(200).json({'success':`User successfuly deleted`})
+//         }
+//         else {
+//             return res.status(404).json({ 'error': 'User was not found' });
+//         }
+//     });
+// },
+
+
+// deleteUser:(req, res)=> {
+//   let userId = req.params.id;
+
+//   console.log('-------userId ', userId);
+
+//   asyncLib.waterfall([
+//       (done) => {models.User.destroy({
+//           attributes: ['id'],
+//               where: { id: userId }
+//       })
+//       .then((userFound) => {
+//         console.log('-------userFound ', userFound);
+//           done(userFound)
+//       })
+//       .catch((err) => {
+//           return res.status(400).json({ 'error': 'An error occurred' });
+//       });
+//   }],
+//   (userFound) => {
+//       if (userFound) {
+//           return res.status(200).json({'success':`User successfuly deleted`})
+//       }
+//       else {
+//           return res.status(404).json({ 'error': 'User was not found' });
+//       }
+//   });
+// },
 }

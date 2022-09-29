@@ -21,13 +21,15 @@ module.exports = (sequelize, DataTypes) => {
        models.User.belongsToMany(models.Post, {
        through: models.Like,
         foreignKey: 'userId',
-        otherkey: 'postId'
+        otherkey: 'postId',
+        onDelete: 'CASCADE'
       });
 
       models.Post.belongsToMany(models.User, {
         through: models.Like,
         foreignKey: 'postId',
-        otherkey: 'userId'
+        otherkey: 'userId',
+        onDelete: 'CASCADE'
       });
      
 

@@ -4,7 +4,7 @@
       <div class="partie1">
         <% for (var i=locals.post.success.length-1 ; i>=0; i-- ) { %>
           <div class="card-group">
-            <div id="largeur" class="card" style="max-width: 18rem">
+            <div id="largeur" class="card" style="width: 18rem">
               <% if (locals.post.success[i].attachement !="" ){ %>
                 <img id="image" style=" border-radius: 10px; height: 200px;"
                   src="/img/<%=locals.post.success[i].attachement %>" class="img-fluid H-50% W-50% Voir" alt="...">
@@ -29,15 +29,12 @@
                       <hr>
                       <div class="ICO">
                         <form action="/like/post/<%= locals.post.success[i].id%>" method="post" id="IDLIKE">
-                          <p>
-                            <%= locals.post.success[i].likesCount%>
-                          </p>
-                          <button> <i class="fa fa-thumbs-up" style="font-size:15px"></i></button>
+                          <button id="coeur"> <i class="fa fa-heart " style="font-size:30px"></i></button>
                         </form>
+                        <p>
+                          <%= locals.post.success[i].likesCount%>
+                        </p>
                         <form action="/unlike/post/<%= locals.post.success[i].id%>" method="post" id="IDDISLIKE">
-                          <p>
-                            <%= locals.post.success[i].likesCount%>
-                          </p>
                           <button> <i class="fa fa-thumbs-down" style="font-size:15px"></i></button>
                         </form>
                       </div>
@@ -49,4 +46,5 @@
     </div>
   </main>
   </body>
-</html>
+
+  </html>

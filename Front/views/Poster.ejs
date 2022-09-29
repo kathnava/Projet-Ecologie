@@ -1,0 +1,20 @@
+<%- include('./includes/header.ejs') %>
+<div class="encadre">
+<form action="/profil/newpost" method="post"  onctype="multipart/form-data" id="posterpost">
+          <div class="input-group mb-3">
+            <input type="text" name="texte" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message" autofocus>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label"></label>
+            <input class="form-control" id="ajoutphotp" type="file" name='attachement' id="formFile">
+          </div>
+          <br>
+          <div>
+            <button class="btn btn-primary buttonpublier" type="submit">Publier</button>
+            <!-- <input type="submit"  value="Publier"  > -->
+            <br>
+          </div>
+          <br>
+        </form>
+        </div>
