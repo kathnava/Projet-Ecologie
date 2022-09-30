@@ -13,15 +13,18 @@ module.exports = (sequelize, DataTypes) => {
 
       // define association here
       models.Like.belongsTo(models.User,{
-        as: 'User', foreignkey: 'userId'
+        as: 'User', foreignkey: 'userId',
+        onDelete: 'CASCADE'
       })
       models.Like.belongsTo(models.Post,{
-        as: 'Post', foreignkey: 'postId'
+        as: 'Post', foreignkey: 'postId',
+        onDelete: 'CASCADE'
       })
        models.User.belongsToMany(models.Post, {
        through: models.Like,
         foreignKey: 'userId',
         otherkey: 'postId',
+        onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });
 
@@ -29,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.Like,
         foreignKey: 'postId',
         otherkey: 'userId',
+        onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });
      

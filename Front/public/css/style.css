@@ -471,7 +471,7 @@
 #form3 {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 30px;
 }
 
 .card-img-top img {
@@ -545,7 +545,7 @@
     justify-content: center;
     align-items: center;
     width: 90%;
-    background-image: url(giphy.gif);
+    
 }
 
 #PR {
@@ -662,6 +662,23 @@ button:hover{
     margin-top: 5%;
 }
 
+.encadre {
+    margin-left: 10%;
+}
+
+#ajoutphotp {
+    width: 100%;
+}
+
+.input1 {
+    width: 90%;
+}
+
+.formKN {
+    padding: 5%;
+}
+
+
 @media screen and (max-width:900px) and (min-width:768px) {
     .container {
         position: relative;
@@ -732,8 +749,9 @@ button:hover{
 }
 
 .btn, btn-primary {
-    width: 92%;
-    margin-left: 3%;
+
+    width: 90%;
+    
 }
 
 #mot {
@@ -807,11 +825,7 @@ H1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* gap: 25px; */
-    /* margin-bottom: 25px; */
-    background: url(plante.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
+  
 }
 
 .partie1 {
@@ -836,6 +850,24 @@ H1 {
 .container {
     margin-top: 3rem;
 }
+
+.MOPR {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#ajoutphotp {
+    width: 100%;
+}
+
+.encadre {
+    margin-left: 10%;
+}
+
 }
 
 
@@ -1001,7 +1033,7 @@ button, input, optgroup, select, textarea {
 }
 
 .card {
-    max-width: 40rem !important;
+    width: 35rem;
 }
 
 #but {
@@ -1051,5 +1083,15 @@ button, input, optgroup, select, textarea {
 }
 .container {
     margin-top: 30px;
+}
+
+.MOPR {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
 }
 }

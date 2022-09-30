@@ -30,7 +30,7 @@
                                 <td>
                                     <form action="/lesutilisateurs/<%= locals.user[i].id %>" method="post">
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger">Suppression</button>
+                                        <button type="submit" class="btn btn-danger"onClick= 'return confirm("Voulez-vous vraiment supprimer cet utilisateur ?")'>Suppression</button>
                                     </form>
                                 </td>
                             </tr>

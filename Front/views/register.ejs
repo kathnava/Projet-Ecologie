@@ -1,87 +1,55 @@
 <%- include('./includes/header.ejs') %>
-<% if (locals.error){ %> 
-  <div class="alert alert-danger">
-  <%= locals.error %> 
-  </div>
-  <% } %>
-  <main class="container">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" id="barre">
-          <a class="navbar-brand" href="#"><Menu></Menu></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./register">Inscrivez-vous</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./Trouvez">Mot de passe oublié</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login">Article à ajouter</a>
-              </li>
-              <li id="test" class="nav-item">
-                <a class="nav-link" href="./pagetext">Qualite Eau</a>
-              </li>
-            </ul> -->
-            <!-- <form class="form-inline">
-              <i class="fas fa-search" aria-hidden="true"></i>
-              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                aria-label="Search">
-            </form>
-            <div class="dropdown">
-              <div class="dropdown-content">
-                  <a href="login"><i class="fa fa-fw fa-user"></i> <p id="con">Se Connecter</p></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav> -->
+  <% if (locals.error){ %>
+    <div class="alert alert-danger">
+      <%= locals.error %>
+    </div>
+    <% } %>
+      <main class="container">
         <div class="row">
-            <h1>HELLO WOLRD</h1>                                                                          
-            <div class="row">
-                <figure class="textHome text-end">
-                    <h1>Connectez-Vous</h1>
-                    <figcaption class="blockquote-footer">
-                    HELLO WORLD <cite title="Source Title">This is My Project</cite>
-                    <br>
-                    &nbsp;&nbsp;
-                    <img src="../public/img/tortue.jpg" alt="" width="8%">
-                    </figcaption>
-                </figure>
-                <form action="/register" method="post">
-                    <div class="cadre" >
-                      <div class="row g-3">
-                          <div class="col">
-                            <label for="inputFirstname" class="form-label">Nom</label>
-                            <input type="text" class="form-control" placeholder="First name" name="nom" aria-label="First name" autofocus>
-                          </div>
-                          <div class="col">
-                            <label for="inputLastname" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" placeholder="Last name" name="prenom" aria-label="Last name" autofocus>
-                          </div> 
-                          <form class="row g-3">
-                              <div class="col-md-3">
-                                <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="E-mail" name="email" id="inputEmail4" autofocus>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputPassword4" class="form-label">Password</label>
-                                <input type="password" class="form-control" placeholder="Password" name="password" id="inputPassword4" autofocus>
-                              </div>
-                              <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg" id="but1" autofocus>Enregistrer</button>
-                              </div>
-                          </form>
-                      </div>
+          <h1>HELLO WOLRD</h1>
+          <div class="row">
+            <figure class="textHome text-end">
+              <h1>Connectez-Vous</h1>
+              <figcaption class="blockquote-footer">
+                HELLO WORLD <cite title="Source Title">This is My Project</cite>
+                <br>
+                &nbsp;&nbsp;
+                <img src="../public/img/tortue.jpg" alt="" width="8%">
+              </figcaption>
+            </figure>
+            <form action="/register" method="post">
+              <div class="cadre">
+                <div class="row g-3">
+                  <div class="col">
+                    <label for="inputFirstname" class="form-label">Nom</label>
+                    <input type="text" class="form-control" placeholder="First name" name="nom" aria-label="First name"
+                      autofocus>
                   </div>
-              </form>
+                  <div class="col">
+                    <label for="inputLastname" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" placeholder="Last name" name="prenom" aria-label="Last name"
+                      autofocus>
+                  </div>
+                  <form class="row g-3">
+                    <div class="col-md-3">
+                      <label for="inputEmail4" class="form-label">Email</label>
+                      <input type="email" class="form-control" placeholder="E-mail" name="email" id="inputEmail4"
+                        autofocus>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="inputPassword4" class="form-label">Password</label>
+                      <input type="password" class="form-control" placeholder="Password" name="password"
+                        id="inputPassword4" autofocus>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary btn-lg" id="but1" autofocus>Enregistrer</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </form>
           </div>
-    </main>
-</body>
-</html>
+      </main>
+      </body>
+
+      </html>

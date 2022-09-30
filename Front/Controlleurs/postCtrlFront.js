@@ -34,29 +34,43 @@ exports.addPost= async (req, res) => {
 })
 }
 
-exports.getPostAll = async (req,res) => {
-    const posts = await fetch('http://localhost:8080/api/getAllPosts',{
-        headers: {
-            Authorization: localStorage.getItem('token'),// Token à récupérer
-        },
+// exports.getPostAll = async (req,res) => {
+//     const posts = await fetch('http://localhost:8080/api/getAllPosts',{
+//         headers: {
+//             Authorization: localStorage.getItem('token'),// Token à récupérer
+//         },
 
-    })
-    const userPost = await posts.json()
-    console.log(userPost);
-    const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
-        headers: {
-            Authorization: localStorage.getItem('token')// Token à récupérer
-        }
-         });
+//     })
+//     const userPost = await posts.json()
+//     console.log(userPost);
+//     const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
+//         headers: {
+//             Authorization: localStorage.getItem('token')// Token à récupérer
+//         }
+//          });
 
-    const moi = await response.json();
+//     const moi = await response.json();
 
 
-    if(userPost.success){
-        res.render('home',{me : moi , post: userPost  })
-    }
+//     if(userPost.success){
+//         res.render('home',{me : moi , post: userPost  })
+//     }
     
+
+    exports.getPostAll = async (req,res,next) => {
+      const posts = await fetch('http://localhost:8080/api/getAllPosts' )
+      
+      const userPost = await posts.json()
+
+      console.log('---------ici on post ------', userPost);
+      
+  
+      if(userPost){
+          res.render('home',{ post: userPost, me:moi  })
+      }
+      
 }
+
 
 
 exports.getUserByToken = async (req, res, next) => {

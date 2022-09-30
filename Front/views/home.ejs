@@ -1,8 +1,11 @@
 <%- include('./includes/header.ejs') %>
+<%console.log('----------recuperer dans home', locals.post.success) %>
+<% if( locals.me&&locals.post.success ) { %>
   <main class="container">
     <div class="total">
       <div class="partie1">
         <% for (var i=locals.post.success.length-1 ; i>=0; i-- ) { %>
+          
           <div class="card-group">
             <div id="largeur" class="card" style="width: 18rem">
               <% if (locals.post.success[i].attachement !="" ){ %>
@@ -18,14 +21,14 @@
                       </h5>
                       <a href="/img/<%= locals.post.success[i].attachement %>" name="attachement" id="but"
                         class="btn btn-primary">Afficher l'image</a>
+                        <!-- < % for (var j=locals.me.success.length-1 ; j=i; j++ ) { %> -->
                       <div class="mileu" role="alert">
                         <div class="ide">
-                          <%= locals.me.nom %>
+                          userId:<%= locals.success.me[i].prenom %> 
                         </div>
-                        <div class="nom">
-                          <%= locals.me.prenom %>
-                        </div>
+                      
                       </div>
+                   
                       <hr>
                       <div class="ICO">
                         <form action="/like/post/<%= locals.post.success[i].id%>" method="post" id="IDLIKE">
@@ -44,7 +47,9 @@
           <% } %>
       </div>
     </div>
+  <% } %>
   </main>
+
   </body>
 
   </html>
