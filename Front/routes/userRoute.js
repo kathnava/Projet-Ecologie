@@ -95,7 +95,11 @@ route.post('/lesutilisateurs/:id', AdminCtrlFront.deleteUserFront);
 route.get('/lesutilisateurs', AdminCtrlFront.showPageLesUsers);
 
 // Admin afficher tous les posts de tous les users 
-route.get('/lespost', userCtrlFront.getUserByToken, AdminCtrlFront.getPostAllByAdmin);
+route.get('/deletePostByAdmin', userCtrlFront.getUserByToken, AdminCtrlFront.getPostAllByAdmin);
+
+// Admin supprimer les posts des users 
+route.post('/deletePostByAdmin/:id', userCtrlFront.getUserByToken, AdminCtrlFront.deletePostByAdmin );
+route.get('/deletePostByAdmin', AdminCtrlFront.showPageLesposts);
 
 
 /*route.get('/', (req, res) => {

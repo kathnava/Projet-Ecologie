@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 .textHome{
     width: 50%;
 }
@@ -88,7 +89,7 @@
 }
 
 .card-group {
-    border: 5px solid #ccc;
+    /* border: 5px solid #ccc; */
     border-radius: 10px;
     box-shadow: #ccc;
     box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
@@ -120,9 +121,6 @@
     margin-left: 30px;
 }
 
-/* .container-fluid  {
-    margin-left: 200px;
-} */
 
 .btn, btn-primary {
     margin-left: 3px;
@@ -208,11 +206,7 @@
     /* width: 40%; */
 }
 
-.ICO{
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-}
+
 
 .fa fa-thumbs-up {
     font-size: 100px;
@@ -674,8 +668,44 @@ button:hover{
     width: 90%;
 }
 
-.formKN {
+/* .formKN {
     padding: 5%;
+} */
+
+.ICO {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.posterunarticle {
+    justify-items: center;
+    text-align: center;
+    padding: 2%;
+    color: blue;
+   
+}
+
+.Modifierlescoord {
+    justify-items: center;
+    text-align: center;
+    color: blue;
+}
+
+
+.RetourP {
+    margin-right: 90%;
+}
+
+.SousMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    justify-items: center;
+    justify-self: center;
 }
 
 
@@ -799,7 +829,7 @@ H3 {
 
 H1 {
     margin-left: 15%;
-    margin-top: 20%;
+    /* margin-top: 20%; */
 }
 
 /* #partie1 {
@@ -817,7 +847,7 @@ H1 {
 } */
 
 .card {
-    max-width: 50rem !important;
+    max-width: none;
    
 }
 
@@ -832,7 +862,7 @@ H1 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 250px;
     justify-content: space-around;
 }
 
@@ -868,6 +898,18 @@ H1 {
     margin-left: 10%;
 }
 
+.ICO {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.card-group>.card {
+    margin-bottom: none;
+}
+
 }
 
 
@@ -901,6 +943,8 @@ H1 {
     #in {
         width: 95%;
     }
+
+
     .mb-3 {
        
         margin-left: 10px;
@@ -1014,7 +1058,7 @@ H1 {
 
 H1 {
     margin-left: 10%;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 button, input, optgroup, select, textarea {
@@ -1067,7 +1111,8 @@ button, input, optgroup, select, textarea {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    justify-content: space-between;
+    justify-content: center;
+    justify-items: center;
 }
 
 #IDLIKE {
@@ -1094,4 +1139,19 @@ button, input, optgroup, select, textarea {
     width: 100%;
    
 }
+
+.MenuRes {
+    width: 14rem;
+}
+
+.card {
+    max-width: none;
+   
+}
+
+
+.card-group>.card {
+    margin-bottom: none;
+}
+
 }

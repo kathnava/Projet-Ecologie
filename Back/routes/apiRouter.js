@@ -19,8 +19,11 @@ apiRouter.route('/getAll').get(userCtrl.getAllUsers);
 apiRouter.route('/put').put(userCtrl.PutUser);
 // apiRouter.route('/delete/:id').delete(userCtrl.deleteUser);
 
-// Route Admin 
+// Route Admin Supprime User
 apiRouter.route('/deleteUserByAdmin/:id').delete(AdminCtrl.deleteUserByAdmin);
+
+// Route Admin supprime Post
+apiRouter.route('/deletePostByAdmin/:id').delete(AdminCtrl.deletePostByAdmin);
 
 
 //route post 

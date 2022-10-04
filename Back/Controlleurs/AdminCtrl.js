@@ -82,5 +82,35 @@ module.exports = {
       .catch(function (error) {
         return res.status(500).json({ error: "unable to verify user" });
       });
-    }
+    },
+
+    deletePostByAdmin: function (req, res) {
+      let headerAuth = req.headers["authorization"];
+      let userConnectedId  = jwtUtils.getUserId(headerAuth);
+      let postId = req.params.id;
+    
+  
+      models.User.findOne({
+        where: { id: userConnectedId },
+      })
+        .then(function (userConnectedFound) {
+          console.log("ici CONNECTED USER ", userConnectedFound.dataValues.isAdmin);
+  
+                if (userConnectedFound.dataValues.isAdmin == true) {
+                  models.Post.destroy({
+                    where: { id: postId },
+                  });
+                  return res
+                    .status(200)
+                    .json({ success: "Your post has been deleted" });
+                } else {
+                  return res.status(403).json({
+                    error: "you don't have the rights to delete this post",
+                  });
+                }
+              })
+        .catch(function (error) {
+          return res.status(500).json({ error: "unable to verify user" });
+        });
+    },
 }

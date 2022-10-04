@@ -89,7 +89,37 @@ exports.getPostAllByAdmin = async (req,res) => {
 
 
     if(userPost.success){
-        res.render('lespost',{me : moi , post: userPost  })
+        res.render('deletePostByAdmin',{me : moi , post: userPost  })
     }
+  }
     
+
+    
+exports.deletePostByAdmin = async (req, res) => {
+    
+  let postId = req.params.id;
+
+const response = await fetch(`http://localhost:8080/api/deletePostByAdmin/${postId}`,
+  {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: localStorage.getItem("token"), // Token à récupérer
+
+    },
+  }
+);
+const userPost = await response.json();
+if (userPost ) {
+// console.log('MYSON',myJson)
+res.redirect('/deletePostByAdmin' );
 }
+}
+
+
+exports.showPageLesposts = async (req, res, next) => { 
+  
+    res.render('deletePostByAdmin');
+}
+
+
