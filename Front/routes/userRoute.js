@@ -102,6 +102,9 @@ route.post('/deletePostByAdmin/:id', userCtrlFront.getUserByToken, AdminCtrlFron
 route.get('/deletePostByAdmin', AdminCtrlFront.showPageLesposts);
 
 
+// Zoomer un Post 
+route.get('/ZoomPost/:id', userCtrlFront.getUserByToken, postCtrlFront.getPostOneFront );
+
 /*route.get('/', (req, res) => {
     res.render('home');
   })*/

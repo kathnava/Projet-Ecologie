@@ -1,16 +1,25 @@
 <%- include('./includes/header.ejs') %>
 <div class="ui container admin_buttons">
-    <h2 id="Commandes"> LES COMMANDES</h2>
+    <h2 id="Commandes" style="color:red;"> LES COMMANDES</h2>
     <hr class="HR">
+    <div class="deuxparties">
     <div class="Commande">
-       
-        <a href='/lesutilisateurs'><button class="btn btn-primary btn-lg"><i class='fas fa-book-open' style:font-size:16px></i> &nbsp;&nbsp;Voir les comptes des utilisateurs</button></a>
-    
-        <a href='/deletePostByAdmin'><button class="btn-primary btn-lg"><i class='far fa-edit' style='font-size:24px'></i>&nbsp;&nbsp;Voir les posts des utilisateurs</button></a>
+        <div class="RetourP">
+            <a href="/profil"><i class="fas fa-user-alt profilicone" style="font-size: 70px; margin-right: 10%; margin-top: 2% ;color:red"></i></a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="deuxbutAdmin">
+            <a href='/lesutilisateurs'><button class="btn btn-primary btn-lg"><i class='fas fa-book-open' style:font-size:16px></i> &nbsp;&nbsp;Voir les comptes des utilisateurs</button></a>
+            <a href='/deletePostByAdmin'><button class="btn-primary btn-lg"><i class='far fa-edit' style='font-size:24px'></i>&nbsp;&nbsp;Voir les posts des utilisateurs</button></a>
+        </div>
     </div>
-    <div>
+    <div class="AdminBout">
         <a href="./profil"><button type="button" class="btn btn-primary btn-lg button2"><i class='fas fa-user-alt' style: font-size: 30px></i> &nbsp;&nbsp;Retour au Profil</button></a>
     </div>
     <br>
+    <br>
     <a href="./profil"><i class='fas fa-arrow-circle-left' style='font-size:48px;color:red'></a></i>
+</div>
 </div>

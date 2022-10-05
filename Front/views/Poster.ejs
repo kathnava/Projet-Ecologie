@@ -1,26 +1,29 @@
 <%- include('./includes/header.ejs') %>
-<div class="encadre">
-  <div class="profilretour">
-    <div>
-      <a href="/profil"><i class="fas fa-user-alt" style="font-size: 50px; margin-left: 2%; margin-top: 2% ;color:red"></i></a>
+  <div class="encadre">
+    <div class="profilretour">
+      <div>
+        <a href="/profil" id="Pro"><i class="fas fa-user-alt" style="font-size: 50px; margin-left: 2%; margin-top: 2% ;color:red"></i></a>
+      </div>
+      <div>
+        <h2 class="posterunarticle">Poster un article et un texte</h2>
+      </div>
+      <hr>
     </div>
-    <h2 class="posterunarticle">Poster un article et un texte</h2>
-    <hr>
+    <form action="/profil/newpost" method="post" onctype="multipart/form-data" id="posterpost">
+      <div class="input-group mb-3">
+        <textarea name="texte" class="form-control " aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message"  autofocus>
+        </textarea>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label"></label>
+        <input class="form-control ajoutphotp" id="#" type="file" name='attachement' id="formFile">
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-primary buttonpublier" type="submit">Publier</button>
+        <br>
+      </div>
+      <br>
+    </form>
   </div>
-<form action="/profil/newpost" method="post"  onctype="multipart/form-data" id="posterpost">
-          <div class="input-group mb-3">
-            <input type="text" name="texte" class="form-control" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message" autofocus>
-          </div>
-          <div class="mb-3">
-            <label for="formFile" class="form-label"></label>
-            <input class="form-control" id="ajoutphotp" type="file" name='attachement' id="formFile">
-          </div>
-          <br>
-          <div>
-            <button class="btn btn-primary buttonpublier" type="submit">Publier</button>
-            <br>
-          </div>
-          <br>
-        </form>
-        </div>

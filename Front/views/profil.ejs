@@ -11,16 +11,16 @@
             <% locals.post.success.reverse().map((post)=>{ %>
               <% if(post.userId===locals.me.id){ %>
                 <div class="card-group">
-                  <div class="card" style="width: 18rem">
+                  <div class="card" >
                     <% if (post.attachement !="" ){ %>
                       <img id="image" style=" border-radius: 10px; height: 200px;" src="/img/<%= post.attachement %>"
                         class="img-fluid H-50% W-50%" alt="...">
                       <% } else { %>
                         <img id="image" style=" border-radius: 10px; height: 200px;"
                           src="https://dummyimage.com/640x360/fff/aaa" class="img-fluid H-50% W-50%" alt="...">
-                        <% } %>
+                        <% } %> 
                           <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title courtprofil">
                               <%= post.texte %>
                             </h5>
                           </div>

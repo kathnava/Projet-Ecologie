@@ -95,6 +95,8 @@
     box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
     -webkit-box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
     -moz-box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
+    width: 25%;
+    margin-bottom: 2%;
 }
 
 .btn, btn-primary btn-lg {
@@ -121,6 +123,9 @@
     margin-left: 30px;
 }
 
+/* .container-fluid  {
+    margin-left: 200px;
+} */
 
 .btn, btn-primary {
     margin-left: 3px;
@@ -195,6 +200,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    width: 100%;
 }
 
 .mileu{
@@ -323,7 +329,7 @@
     height: 500px;
 }
 
-#ajoutphotp{
+.ajoutphotp{
     width: 50%;
 }
 
@@ -622,8 +628,8 @@ button:hover{
 
 .Commande {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     gap: 5%;
 }
 
@@ -660,17 +666,21 @@ button:hover{
     margin-left: 10%;
 }
 
-#ajoutphotp {
+.ajoutphotp {
     width: 100%;
+}
+
+#ajouttexte {
+    width: 80%;
 }
 
 .input1 {
     width: 90%;
 }
 
-/* .formKN {
-    padding: 5%;
-} */
+.formKN {
+    margin-left: 10%;
+}
 
 .ICO {
     display: flex;
@@ -708,6 +718,72 @@ button:hover{
     justify-self: center;
 }
 
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.overflow-string {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+
+}
+
+
+#image {
+    width: 100%;
+}
+
+.court {
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+}
+
+.courtprofil {
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+}
+  
+
+.imageZoom {
+    width: 50%;
+}
+
+.Zoomensemble {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Zoomtext {
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.deuxparties {
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+}
+
+.deuxbutAdmin {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
 
 @media screen and (max-width:900px) and (min-width:768px) {
     .container {
@@ -837,17 +913,17 @@ H1 {
     flex-direction: column;
 } */
 
-.Card {
+/* .Card {
     max-width: 70rem !important;
     margin-bottom: 150px;
-}
+} */
 
 /* #card-home {
     margin-bottom: 150px!important;
 } */
 
 .card {
-    max-width: none;
+   width: none;
    
 }
 
@@ -860,10 +936,9 @@ H1 {
 
 .partie1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 250px;
-    justify-content: space-around;
+    width: 100%;
 }
 
 #Menutete {
@@ -890,8 +965,12 @@ H1 {
     width: 100%;
 }
 
-#ajoutphotp {
+.ajoutphotp {
     width: 100%;
+}
+
+#ajouttexte{
+    width: 80%;
 }
 
 .encadre {
@@ -906,8 +985,10 @@ H1 {
     justify-items: center;
 }
 
-.card-group>.card {
-    margin-bottom: none;
+.card-group {
+    margin-bottom: 10px;
+    width: 40%;
+   
 }
 
 }
@@ -1077,7 +1158,7 @@ button, input, optgroup, select, textarea {
 }
 
 .card {
-    width: 35rem;
+    width: none;
 }
 
 #but {
@@ -1093,12 +1174,15 @@ button, input, optgroup, select, textarea {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .card-group {
     margin-bottom: 10px!important;
+    width: 100%;
    
 }
 
@@ -1144,14 +1228,63 @@ button, input, optgroup, select, textarea {
     width: 14rem;
 }
 
-.card {
-    max-width: none;
-   
-}
 
 
 .card-group>.card {
     margin-bottom: none;
 }
 
+.Modifierlescoord {
+    font-size: 20px;
 }
+
+.RetourP {
+    margin-left: 90%;
+}
+
+.cadre {
+  
+    width: 95%;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.posterunarticle {
+    font-size: 20px;
+   
+}
+
+.encadre {
+    width: 85%;
+  
+}
+
+#Pro {
+    margin-left: 40%;
+}
+
+.ajoutphotp {
+    width: 100%;
+}
+
+
+.Commande {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    align-items: center;
+}
+
+.AdminBout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 3%;
+}
+}
+

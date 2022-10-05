@@ -1,0 +1,13 @@
+<%- include('./includes/header.ejs') %>
+<div class="Zoomensemble">
+<% if(locals.success) {  %>
+    <% if (success.attachement !="" ){ %>
+    <img src="/img/<%= success.attachement %>" class="imageZoom"alt="image"style="margin-left: 20%">
+    <% } %>
+     <br>
+     <br>
+    <div class="Zoomtext "><%= success.texte %> 
+
+    <% } %>
+    </div>
+</div>

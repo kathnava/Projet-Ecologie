@@ -162,6 +162,27 @@ module.exports = {
       })
   },
 
+  getPostOne: (req, res) => {
+    var postId = req.params.id;
+
+    models.Post.findOne({
+      attributes: ['id', 'texte','attachement','likesCount' ],
+      where: { id: postId }
+    })
+      .then((post) => {
+        if (post) {
+          res.status(201).json(post)
+        }
+        else {
+          res.status(404).json({ 'error': 'Publication not found' })
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(500).json({ 'error': 'Cannot fetch Publication' });
+      })
+  },
+  
   // getAllPosts: (req, res) => {
   //   models.Post.findAll({
   //     attributes: ['id', 'userId', 'texte', 'attachement','likesCount']

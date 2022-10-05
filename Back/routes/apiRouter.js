@@ -32,6 +32,7 @@ apiRouter.route('/getAllPosts').get(postCtrl.getAllPosts);
 apiRouter.route('/getmyPost').get(postCtrl.getmyPost);
 apiRouter.route('/del/:id').delete(postCtrl.deletePost);
 apiRouter.route('/put/:id').put(postCtrl.PutPost);
+apiRouter.route('/getPostOne/:id').get(postCtrl.getPostOne);
 
 //route like
 apiRouter.route('/like/:id').post(likeCtrl.like);

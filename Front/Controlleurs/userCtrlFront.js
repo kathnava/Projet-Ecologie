@@ -64,7 +64,7 @@ exports.logUser = async (req, res, next) => {
         localStorage.setItem('token', json.token);
         if (localStorage.getItem('token')) {
             res.redirect('/profil')
-            //res.render('profil')
+            // res.render('profil')
         }
         else {
             res.render('index', json)
@@ -75,7 +75,7 @@ exports.logUser = async (req, res, next) => {
         console.error(err);
     })
 
-//res.redirect('/')
+// res.redirect('/')
 }
 exports.logOut  = async(req, res, next) => {
     localStorage.clear();

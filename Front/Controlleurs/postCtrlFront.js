@@ -64,7 +64,14 @@ exports.addPost= async (req, res) => {
 
       console.log('---------ici on post ------', userPost);
       
-  
+      const response = await fetch(`http://localhost:8080/api/me/${req.params.id}`, {
+        headers: {
+            Authorization: localStorage.getItem('token')// Token à récupérer
+        }
+         });
+
+    const moi = await response.json();
+      
       if(userPost){
           res.render('home',{ post: userPost, me:moi  })
       }
@@ -164,3 +171,23 @@ exports.showPageDeletePost = async (req, res, next) => {
   
   res.render('DeletePost')
 }
+
+exports.getPostOneFront = async (req,res,next) => {
+
+  const posts = await fetch(`http://localhost:8080/api/getPostOne/${req.params.id}` , {
+  
+    headers: {
+        Authorization: localStorage.getItem('token')// Token à récupérer
+  }
+});
+
+const myJson = await posts.json();
+  
+
+      res.render('ZoomPost',{ success: myJson })
+
+      return next();
+  
+  
+}
+
