@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+.background {
+    background-image: url('/img/nuage.jpg');
+}
 
 .textHome{
     width: 50%;
@@ -13,8 +16,10 @@
     border-radius: 10px;
 }
 
-.inscrit {
+.inscrit a {
     margin-bottom: 20px;
+    text-decoration:underline;
+    color: blue;
 }
 
 #but {
@@ -58,13 +63,13 @@
     border-radius: 10px;
 }
 
-.textHome, text-end {
+.textHome text-end {
     flex-direction: column;
     margin-left: 60px;
 }
 
 .cadre {
-    background-color:#EBE9E9;
+    /* background-color:#EBE9E9; */
     padding: 20px;
     border-radius: 10px;
     border: 5px;
@@ -72,6 +77,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    /* background-color: #cccccc; */
+    
 }
 
 .card-img-top {
@@ -97,11 +105,11 @@
     -moz-box-shadow: -8px 8px 20px -9px rgba(186,175,175,0.76);
     width: 25%;
     margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .btn, btn-primary btn-lg {
     margin-bottom: 20px;
-    margin-left: 80px;
 }
 
 .card-title {
@@ -128,7 +136,7 @@
 } */
 
 .btn, btn-primary {
-    margin-left: 3px;
+    /* margin-left: 3px; */
 }
 
 .erreur-message {
@@ -198,9 +206,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5rem;
     justify-content: center;
     width: 100%;
+    background-color: #ccc;
 }
 
 .mileu{
@@ -483,7 +492,7 @@
 }
 
 #but1 {
-    width: 1000px;
+    width: 60%;
 }
 
 .navbar-nav {
@@ -603,10 +612,7 @@ button:hover{
     
 }
 
-.cadre {
-    width: 80%;
-    background-color: #cccccc;
-}
+
 
 #form3 {
     display: flex;
@@ -768,8 +774,11 @@ a {
 
 
 .Zoomtext {
-    margin-top: 5%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
+    /* width: 50%; */
+    padding: 5%;
+    background-color:#ccc;
+    margin-bottom: 5%;
 }
 
 .deuxparties {
@@ -783,6 +792,28 @@ a {
     display: flex;
     flex-direction: row;
     gap: 10%;
+}
+
+.butDelete {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.espaceFormulaire {
+    width: 100%;
+    padding : 5% 5% 5% 5%;
+}
+
+.titrekn {
+    text-align: center;
+}
+
+.divbut {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 
 @media screen and (max-width:900px) and (min-width:768px) {
@@ -931,6 +962,7 @@ H1 {
     width: 100%;
     display: flex;
     flex-direction: column;
+   
   
 }
 
@@ -939,6 +971,7 @@ H1 {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    
 }
 
 #Menutete {
@@ -947,7 +980,7 @@ H1 {
 
 #image {
     border-radius: 10px;
-    height:  30rem!important;
+    height: 25rem!important;
     width: 50rem!important;
     /* object-fit: cover; */
 }  
@@ -991,7 +1024,23 @@ H1 {
    
 }
 
+.cadre {
+  
+    width: 100%;
 }
+
+.titrekn {
+    text-align: center;
+}
+
+.form2 {
+    padding-left: 10%;
+    padding-top: 5%;
+}
+}
+
+
+
 
 
 
@@ -1039,9 +1088,11 @@ H1 {
     }
     .inscrit {
         margin-left: 3%;
+        font-size: 14px;
     }
-    h3 {
-        margin-left: 10px;
+    .text-end h3 {
+        margin-left: 5%;
+        font-size: 18px;
     }
     #titre {
          margin-left: 10px; 
@@ -1244,7 +1295,7 @@ button, input, optgroup, select, textarea {
 
 .cadre {
   
-    width: 95%;
+    width: 100%;
 }
 
 .form-control {
@@ -1286,5 +1337,59 @@ button, input, optgroup, select, textarea {
     
     margin-top: 3%;
 }
+.row {
+    display: flex;
+    flex-wrap: none;
+    flex-direction: column;
 }
+
+.col {
+    width: 95%;
+}
+
+.col-md-3 {
+    width: 95%;
+}
+
+.label1 {
+    margin-left: 3%;
+}
+
+.divbut {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label1 {
+    margin-left: 3%;
+}
+
+#exampleInputEmail1 {
+    width: 92%;
+}
+
+.labe2 {
+    margin-left: 3%;
+}
+
+#emailHelp {
+    margin-left: 3%;
+}
+
+#ser {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+}
+
+#exampleInputPassword1 {
+    width: 92%;
+}
+
+}
+
+
+
 

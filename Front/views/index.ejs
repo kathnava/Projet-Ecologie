@@ -1,30 +1,30 @@
 <%- include('./includes/header.ejs') %>
-<script>
-      $(function(){
-        $("#connect").click(function() {
-          valid = true;
-          if($("#exampleInputEmail1").val() == "") {
-            $("#exampleInputEmail1").next(".erreur-message").fadeIn().text("Veuillez saisir votre e-mail");
-            valid = false;
-          }
-          else if(!$("#exampleInputEmail1").val().match(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
-            $("#exampleInputEmail1").next(".erreur-message").fadeIn().text("Veuillez saisir e-mail valide");
-            valid = false;
-          }
-          else {
-            $("#exampleInputEmail1").next(".erreur-message").fadeOut();
-          }
-          if($("#exampleInputPassword1").val() == "") {
-            $("#exampleInputPassword1").next(".erreur-message").fadeIn().text("Veuillez saisir votre mot de passe");
-            valid = false;
-          }
-          else if(!$("#exampleInputPassword1").val().match(/^(?=.*?[A-Z]{1,})(?=(.*[a-z]){1,})(?=(.*[d]){1,}).{5,24}$/))  {
-            $("#exampleInputPassword1").next(".erreur-message").fadeOut();
-            valid = false;
-          }
-          return valid;
-        });
-      });
+<script type="text/javascript">
+      // $(function(){
+      //   $("#connect").click(function() {
+      //     valid = true;
+      //     if($("#exampleInputEmail1").val() == "") {
+      //       $("#exampleInputEmail1").next(".erreur-message").fadeIn().text("Veuillez saisir votre e-mail");
+      //       valid = false;
+      //     }
+      //     else if(!$("#exampleInputEmail1").val().match(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
+      //       $("#exampleInputEmail1").next(".erreur-message").fadeIn().text("Veuillez saisir e-mail valide");
+      //       valid = false;
+      //     }
+      //     else {
+      //       $("#exampleInputEmail1").next(".erreur-message").fadeOut();
+      //     }
+      //     if($("#exampleInputPassword1").val() == "") {
+      //       $("#exampleInputPassword1").next(".erreur-message").fadeIn().text("Veuillez saisir votre mot de passe");
+      //       valid = false;
+      //     }
+      //     else if(!$("#exampleInputPassword1").val().match(/^(?=.*?[A-Z]{1,})(?=(.*[a-z]){1,})(?=(.*[d]){1,}).{5,24}$/))  {
+      //       $("#exampleInputPassword1").next(".erreur-message").fadeIn().text("Mettez le strict minim Maj, caractere s, chiffre");
+      //       valid = false;
+      //     }
+      //     return valid;
+      //   });
+      // });
     </script>
     <main class="container">
           <br>
@@ -67,20 +67,20 @@
                         </button>
                     </div>
                   <div class="deuxpages">
-                    <form action="/login" method="post" class="formLogIn">
+                    <form action="/login" method="post" class="formLogIn form2">
                         <div class="mb-3">
-                          <label  for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input type="email" class="form-control" aria-describedby="emailHelp" name="email" id="exampleInputEmail1">
+                          <label for="exampleInputEmail1" class="form-label label1">Email address</label>
+                          <input type="email" class="form-control" aria-describedby="emailHelp" name="email" id="exampleInputEmail1" required>
                           <span class="erreur-message">erreur</span>
                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputEmail1" name="password">
+                          <label for="exampleInputPassword1" class="form-label labe2">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
                           <span class="erreur-message">erreur</span>
                         </div>
                           <div class="mb-3 form-check" id="ser">
-                          <input type="checkbox" class="form-check-input" >
+                          <input type="checkbox" class="form-check-input" >&nbsp;&nbsp;
                           <label class="form-check-label" for="exampleCheck1">Se rappeler de moi</label>
                         </div>
                         <button type="submit" class="btn btn-primary" id="connect"a href="./index">Se Connecter</button></a>

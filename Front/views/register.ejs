@@ -25,18 +25,21 @@
       return valid;
     });
   });
-</script>
+</script> 
+<div class="background">
   <% if (locals.error){ %>
     <div class="alert alert-danger">
       <%= locals.error %>
     </div>
     <% } %>
+    
       <main class="container">
         <div class="row">
+          <div class="titrekn">
           <h1>HELLO WOLRD</h1>
+          </div>
           <div class="row">
-            <figure class="textHome text-end">
-              <h1>Connectez-Vous</h1>
+            <figure class="textHome text-end divH1">
               <figcaption class="blockquote-footer">
                 HELLO WORLD <cite title="Source Title">This is My Project</cite>
                 <br>
@@ -46,29 +49,29 @@
             </figure>
             <form action="/register" method="post">
               <div class="cadre">
-                <div class="row g-3">
+                <div class="row g-3 espaceFormulaire">
                   <div class="col">
-                    <label for="inputFirstname" class="form-label">Nom</label>
+                    <label for="inputFirstname" class="form-label label1">Nom</label>
                     <input type="text" class="form-control" placeholder="First name" name="nom" aria-label="First name"
                       autofocus>
                   </div>
                   <div class="col">
-                    <label for="inputLastname" class="form-label">Prénom</label>
+                    <label for="inputLastname" class="form-label label1">Prénom</label>
                     <input type="text" class="form-control" placeholder="Last name" name="prenom" aria-label="Last name"
                       autofocus>
                   </div>
                   <form class="row g-3">
                     <div class="col-md-3">
-                      <label for="inputEmail4" class="form-label">Email</label>
+                      <label for="inputEmail4" class="form-label label1">Email</label>
                       <input type="email" class="form-control" placeholder="E-mail" name="email" id="inputEmail4"
                         autofocus>
                     </div>
                     <div class="col-md-3">
-                      <label for="inputPassword4" class="form-label">Password</label>
+                      <label for="inputPassword4" class="form-label label1">Password</label>
                       <input type="password" class="form-control" placeholder="Password" name="password"
                         id="inputPassword4" autofocus>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 divbut">
                       <button type="submit" class="btn btn-primary btn-lg" id="but1" autofocus>Enregistrer</button>
                     </div>
                   </form>
@@ -77,6 +80,7 @@
             </form>
           </div>
       </main>
+    </div>
       </body>
 
       </html>

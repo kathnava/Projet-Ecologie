@@ -166,7 +166,7 @@ module.exports = {
     var postId = req.params.id;
 
     models.Post.findOne({
-      attributes: ['id', 'texte','attachement','likesCount' ],
+      attributes: ['id', 'texte','attachement','likesCount','createdAt' ],
       where: { id: postId }
     })
       .then((post) => {
