@@ -27,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });
-
       models.Post.belongsToMany(models.User, {
         through: models.Like,
         foreignKey: 'postId',
@@ -35,8 +34,6 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });
-     
-
     }
   }
   Like.init({

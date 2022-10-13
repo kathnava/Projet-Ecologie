@@ -3,7 +3,6 @@ const LocalStorage = require('node-localstorage').LocalStorage;
 
 var localStorage = new LocalStorage('./scratch');
 
-
 exports.addUser = async (req, res) => {
     const data = {
         nom : req.body.nom,
@@ -11,7 +10,6 @@ exports.addUser = async (req, res) => {
         email : req.body.email,
         password  : req.body.password,
     };
-
     fetch('http://localhost:8080/api/register', {
       
         // Adding method type
@@ -24,7 +22,6 @@ exports.addUser = async (req, res) => {
         body: JSON.stringify(data),
       
     })
-    
     //Converting to JSON
     .then((res) => {  
         return res.json() 
@@ -39,7 +36,7 @@ exports.addUser = async (req, res) => {
 }
 
 exports.logUser = async (req, res, next) => {
-   console.log('-------- toto -------', req.body); 
+ 
     await fetch("http://localhost:8080/api/login", {
         // Adding method type
         method: "POST",
@@ -53,7 +50,6 @@ exports.logUser = async (req, res, next) => {
             email : req.body.email,
             password  : req.body.password,
         }),
-       
     })
     // Converting to JSON
     .then((res) => {  
@@ -64,7 +60,6 @@ exports.logUser = async (req, res, next) => {
         localStorage.setItem('token', json.token);
         if (localStorage.getItem('token')) {
             res.redirect('/profil')
-            // res.render('profil')
         }
         else {
             res.render('index', json)

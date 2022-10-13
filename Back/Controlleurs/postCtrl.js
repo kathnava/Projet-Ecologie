@@ -19,20 +19,17 @@ module.exports = {
     var userId = jwtUtils.getUserId(headerAuth);
 
     console.log('---------------', userId)
-    // Params
-    //var idComment   = req.body.idCommentaire;
+  
     var texte = req.body.texte;
     var attachement = req.body.attachement;
 
     asyncLib.waterfall([
-
       (done) => {
         models.Post.create({
           texte: texte,
           attachement: attachement,
           userId: userId,
           likesCount: 0,
-
         })
           .then((newPublication) => {
             done(newPublication);

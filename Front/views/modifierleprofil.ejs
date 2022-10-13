@@ -12,37 +12,35 @@
       </ul>
       <% } %>
   </nav>
-  
-  <div class="MOPR">
     <div class="cadre">
-      <div class="RetourP">
-         <a href="/profil"><i class="fas fa-user-alt profilicone" style="font-size: 50px; margin-right: 10%; margin-top: 2% ;color:red"></i>Profil</a>
+      <div class="Equilibre">
+      <div class="imagemodifprofil">
+        <img src="/img/modifprofil.jpg" style="width:100%;" alt="...">
       </div>
-      <br>
+      <div class="Prepartie">
+      <div class="RetourP">
+         <a href="/profil"><i class="fas fa-user-alt profilicone" style="font-size: 50px; margin-right: 10%; margin-top: 20% ;color:red"></i></a>
+      </div>
       <div class="profilretour">
-        
-        <h2 class="Modifierlescoord">Modifier vos coordonnées </h2>
+        <h3 class="Modifierlescoord">Modifier vos coordonnées </h3>
         <hr>
       </div>
     <form action="/profil/update" method="post" id="PR">
-      <!-- <a href="/profil"><i class="fas fa-user-alt" style="font-size: 50px; margin-left: 2%; margin-top: 2% ;color:#6610f2"></i></a>
-      <h2>Modifier vos coordonnées <h2>
-        <hr>
-        <br> -->
       <div class="input-group mb-3">
         <input type="text" name="nom" class="form-control" aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre nom" autofocus>
       </div>
-      <br>
       <div class="input-group mb-3">
         <input type="text" name="prenom" class="form-control" aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre prenom" autofocus>
       </div>
-      <div>
+      <div class="GB">
         <br>
-        <input class="btn btn-primary" type="submit" value="Save changes">
+        <button class="btn btn-primary" id="GBB" type="submit" value="Enregistrer">Enregistrer</button>
       </div>
       <br>
     </form>
   </div>
+</div>
+</div>
 </div>

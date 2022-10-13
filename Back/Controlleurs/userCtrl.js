@@ -8,13 +8,14 @@ require('dotenv').config();
 
 // constants
 const EMAIL_REGEX = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-const PASSWORD_REGEX = /^.{4,8}$/;
+// const PASSWORD_REGEX = /^.{4,8}$/;
+const PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 //mot de passe de 4 à 8 caracteres 
 
 //Routes
 module.exports = {
   addUser: (req, res) => {
-    console.log('BACK BODY ', req.body);
+   
     let nom = req.body.nom;
     let prenom = req.body.prenom;
     let email = req.body.email;
@@ -160,10 +161,9 @@ module.exports = {
   },
 
   getUserMe: (req, res, next) => {
-    //let headerAuth = req.cookies.auth;
+ 
     let headerAuth = req.headers['authorization'];
     let userId = jwtUtils.getUserId(headerAuth)
-    console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', userId);
 
     if (userId < 0) {
       return res.status(400).json({ 'error': 'An error occured mauvais token' })
@@ -241,67 +241,4 @@ module.exports = {
         }
       });
   },
-
-//   deleteUser:(req, res)=> {
-//     let headerAuth = req.headers['authorization'];
-//      let userId = jwtUtils.getUserId(headerAuth);
-//     // let userId = req.params.id;
-
-//     console.log('-------userId ', userId);
-
-//     asyncLib.waterfall([
-//         (done) => {
-//         models.User.destroy({
-//             attributes: ['id', 'nom','prenom','email','password','isAdmin'],
-//             where: { id: userId }
-//         })
-//         .then((userFound) => {
-
-//           console.log('-------userFound ', userFound);
-
-//             done(userFound)
-//         })
-//         .catch((err) => {
-//             return res.status(400).json({ 'error': 'An error occurred'+ err });
-//         });
-//       }
-//     ],
-//     (userFound) => {
-//         if (userFound) {
-//             return res.status(200).json({'success':`User successfuly deleted`})
-//         }
-//         else {
-//             return res.status(404).json({ 'error': 'User was not found' });
-//         }
-//     });
-// },
-
-
-// deleteUser:(req, res)=> {
-//   let userId = req.params.id;
-
-//   console.log('-------userId ', userId);
-
-//   asyncLib.waterfall([
-//       (done) => {models.User.destroy({
-//           attributes: ['id'],
-//               where: { id: userId }
-//       })
-//       .then((userFound) => {
-//         console.log('-------userFound ', userFound);
-//           done(userFound)
-//       })
-//       .catch((err) => {
-//           return res.status(400).json({ 'error': 'An error occurred' });
-//       });
-//   }],
-//   (userFound) => {
-//       if (userFound) {
-//           return res.status(200).json({'success':`User successfuly deleted`})
-//       }
-//       else {
-//           return res.status(404).json({ 'error': 'User was not found' });
-//       }
-//   });
-// },
 }
