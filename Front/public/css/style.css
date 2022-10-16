@@ -7,12 +7,14 @@
     flex-wrap: wrap;
 }
 
-.partie1{
-    margin-top: 10%;
-}
+/* .partie1{
+    margin-top: 5%;
+} */
+
 .TORTUE {
-    margin-left: 7%;
+    margin-left: 4%;
 }
+
 .row1 {
     margin-top: 5%;
 }
@@ -24,9 +26,12 @@
 #GBB {
     width: 100%;
 }
+
 .blocked {
     position: fixed;
     z-index: 999999;
+    top: 0;
+    width: 100%;
 }
 
 .Equilibre {
@@ -36,7 +41,7 @@
     align-items: center;
     width: 80%;
     text-align: center;
-    /* margin-top: 10%; */
+    margin-top: 10%;
 }
 
 .ToutEnsemble {
@@ -96,6 +101,10 @@
     margin-bottom: 20px;
 }
 
+.DECO {
+    margin-top: 5%;
+}
+
 #retour {
     margin-top: 30px;
 }
@@ -148,7 +157,7 @@
     align-items: center;
     width: 100%;
     background-color: #cccccc; 
-    margin-top: 5%;
+    margin-top: 8%;
     
 }
 
@@ -287,15 +296,19 @@
     gap: 1.5rem;
     justify-content: center;
     width: 100%;
-    background-color: #D3D3D3;
+    background-color: #f8f8f8;
+    margin-top: 10%;
 }
 
 .mileu{
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color:#EBE9E9;
     border-radius: 5px;
-    margin:10px 0 0 0;
+    margin:5% 5% 8% 5%;
     /* width: 40%; */
 }
 
@@ -401,8 +414,9 @@
     display: flex;
     flex-direction: row;
 }
+
 .formLogIn {
-    width: 60%;
+    width: 50%;
     padding: 20px;
     height: 400px;
 }
@@ -438,9 +452,9 @@
 
 
 
-.album {
-    margin-top: 10%;
-}
+/* .album {
+    margin-top: 5%;
+} */
 
 /*le button pour modifier image*/
 
@@ -541,10 +555,10 @@
     display: none;
 }
 
-#form3 {
+/* #form3 {
     display: none;
    
-}
+} */
 
 .album {
     display: flex;
@@ -569,6 +583,7 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
+    margin-top: 10%;
 }
 
 .card-img-top img {
@@ -699,6 +714,7 @@ button:hover{
     justify-content: center;
     justify-items: center;
     align-items: center;
+    margin-top: 5%;
 }
 
 
@@ -709,6 +725,7 @@ button:hover{
     flex-wrap: wrap;
     gap: 15px;
     justify-content: space-around;
+    margin-top: 10%;
 }
 
 #MyProfilIcon {
@@ -1016,11 +1033,13 @@ a {
 .inscrit {
     /* margin-left: 3%; */
 }
+
 h3 {
     margin-right :120px;
 
 
 }
+
 .formLogIn {
     height: auto;
     width: 100%;
@@ -1086,7 +1105,7 @@ H1 {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    
+    margin-top: 15%;
    
     
 }
@@ -1129,7 +1148,7 @@ H1 {
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-    /* margin-left: 10%; */
+    /* margin-top: 10%; */
 }
 
 .ICO {
@@ -1161,7 +1180,7 @@ H1 {
 }
 
 .DECO {
-    display: none;
+   margin-top: 10%;
 }
 
 .imagemodifprofil {
@@ -1427,6 +1446,7 @@ button, input, optgroup, select, textarea {
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-top: 20%;
    
 }
 
@@ -1499,6 +1519,7 @@ button, input, optgroup, select, textarea {
 
 .encadre {
     width: 100%;
+    margin-top: 20%;
   
 }
 
@@ -1689,6 +1710,33 @@ button, input, optgroup, select, textarea {
 
 .deuxpages {
     margin-top: 5%;
+}
+
+#form3 {
+    margin-top: 20%;
+}
+
+.ensembledepage {
+    display: flex;
+    flex-direction: row;
+    padding: 5% 5% 5% 5%;
+   
+}
+
+#posterpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.TA {
+    width: 90%;
+}
+
+.BUTTONA {
+    width: 80%;
 }
 
 }

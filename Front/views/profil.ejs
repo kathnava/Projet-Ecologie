@@ -1,11 +1,6 @@
 <%- include('./includes/header.ejs') %>
   <% console.log(locals); %>
     <main class="container">
-      <!-- <div class="column">
-        <h1>HELLO WOLRD</h1>
-        <div class="column">
-        </div> -->
-        <br>
         <div class="album">
           <div id="form3">
             <% locals.post.success.reverse().map((post)=>{ %>
@@ -28,7 +23,6 @@
                             <textarea name="texte" class="form-control " aria-label="Sizing example input"
                              aria-describedby="inputGroup-sizing-default" placeholder="Mettre votre message"  autofocus> Modifier le texte
                             </textarea>
-                            <!-- <input type="text" name="texte" placeholder="modifier le texte" class="input1">  -->
                             <br>
                             <br>
                             <input class="form-control form-control-sm" id="formFileSm " type="file" name="attachement">

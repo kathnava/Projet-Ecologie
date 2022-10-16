@@ -85,7 +85,6 @@ module.exports = {
       if (newUser) {
         // res.render('register', {successMessage: 'user successfuly created'}, res.redirect('/login'))
 
-
         return res.status(201).json({ 'success': 'user successfuly created' })
       }
       else {

@@ -8,7 +8,7 @@
           <% user.Posts.map( ( post) => {  %>
             <% if(post.userId === user.id) {  %>
           <div class="card-group">
-            <div id="largeur" class="card" style="width: 18rem">
+            <div id="largeur" class="card">
               <% if (post.attachement !="" ){ %>
                 <img id="image" style=" border-radius: 10px; height: 200px;"
                   src="/img/<%= post.attachement %> " class="img-fluid H-50% W-50% Voir" alt="..."/>
@@ -22,20 +22,20 @@
                     </h5>
                     <br>
                     <br>
+                    </div>
                     <form action="/deletePostByAdmin/<%= post.id %>" method="post">
                  
                         <button type="submit" id="button9" class="btn btn-primary btn-sm " onClick= 'return confirm("Voulez-vous vraiment supprimer ce post ?")'>Supprimer le post complet</button>
                         <br>
                         <br>
                     </form>
-                      <hr>
+                      <hr class="separation" style="width: 100%;">
                       <div class="mileu" role="alert">
                         <div class="ide">
                           <i class='fas fa-user-alt' style="font-size: 20px; color: red"></i> &nbsp;
                         <%= user.nom %> <%= user.prenom %>  
                         </div> 
                       </div>
-                    </div>
             </div>
           </div>
           <%  }  %>
