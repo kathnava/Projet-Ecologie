@@ -23,6 +23,8 @@ module.exports = {
     var texte = req.body.texte;
     var attachement = req.body.attachement;
 
+    console.log('-------attachement', req.body)
+
     asyncLib.waterfall([
       (done) => {
         models.Post.create({

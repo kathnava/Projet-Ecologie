@@ -9,13 +9,12 @@ module.exports = {
     like: function (req, res) {
         let headerAuth = req.headers['authorization'];
         let userId = jwtUtils.getUserId(headerAuth);
-
+        
         let postId = req.params.id;
 
         if (postId <= 0) {
             return res.status(400).json({ error: "invalid parameters" });
         }
-
         models.Post.findOne({
             where: { id: postId }
         })

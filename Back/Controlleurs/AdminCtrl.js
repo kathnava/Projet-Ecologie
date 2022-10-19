@@ -24,7 +24,7 @@ module.exports = {
       where: { id: userConnectedId },
     })
       .then(function (useConnectedrFound) {
-        console.log("ici CONNECTED USER ", useConnectedrFound.dataValues.isAdmin);
+        // console.log("ici CONNECTED USER ", useConnectedrFound.dataValues.isAdmin);
 
         if (useConnectedrFound.dataValues.isAdmin == true) {
           models.User.destroy({

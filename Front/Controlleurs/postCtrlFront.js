@@ -7,6 +7,7 @@ var localStorage = new LocalStorage('./scratch');
 
 
 exports.addPost = async (req, res) => {
+  
   fetch("http://localhost:8080/api/new", {
 
     // Adding method type

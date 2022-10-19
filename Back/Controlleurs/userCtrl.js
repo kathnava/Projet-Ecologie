@@ -10,7 +10,7 @@ require('dotenv').config();
 const EMAIL_REGEX = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 // const PASSWORD_REGEX = /^.{4,8}$/;
 const PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-//mot de passe de 4 à 8 caracteres 
+//mot de passe 8 caracteres - une maj un chiffre un cara special
 
 //Routes
 module.exports = {

@@ -41,7 +41,7 @@
     align-items: center;
     width: 80%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .ToutEnsemble {
@@ -157,7 +157,7 @@
     align-items: center;
     width: 100%;
     background-color: #cccccc; 
-    margin-top: 8%;
+    margin-top: 5%;
     
 }
 
@@ -1105,7 +1105,7 @@ H1 {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 20%;
    
     
 }
@@ -1160,7 +1160,7 @@ H1 {
 }
 
 .card-group {
-    margin-bottom: 10px;
+    margin-bottom: 1%;
     width: 40%;
    
 }
@@ -1446,7 +1446,7 @@ button, input, optgroup, select, textarea {
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 25%;
    
 }
 
@@ -1499,11 +1499,11 @@ button, input, optgroup, select, textarea {
 
 
 .card-group>.card {
-    margin-bottom: none;
+    margin-bottom: none!important;
 }
 
 .Modifierlescoord {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 
@@ -1737,6 +1737,15 @@ button, input, optgroup, select, textarea {
 
 .BUTTONA {
     width: 80%;
+}
+
+.RetourP {
+    margin-top: 10%;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    gap: 10%;
 }
 
 }

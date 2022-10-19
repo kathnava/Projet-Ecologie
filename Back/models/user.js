@@ -14,14 +14,13 @@ module.exports = (sequelize, DataTypes) => {
       models.User.hasMany(models.Post);
       models.User.hasMany(models.Like);
     
-
     }
   }
   User.init({
     nom: DataTypes.STRING,
     prenom: DataTypes.STRING,
-    email: DataTypes.STRING,
     password: DataTypes.STRING,
+    email: DataTypes.STRING,
     isAdmin: DataTypes.BOOLEAN
   }, {
     sequelize,
