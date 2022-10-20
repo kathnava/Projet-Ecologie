@@ -25,6 +25,12 @@
       <a class="navbar-brand" href="#">
         <img src="/img/TOR.png" alt="logo Tortue" width="40" height="34">
       </a>
+      <a href="/login">
+        Login/ 
+      </a>
+      <a href="/register">
+        Register
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,6 +43,7 @@
           <li class="nav-item dropdown ">
             <% console.log('----------ici locals--------', locals) %>
               <% if(locals.me){ %>
+                <% if(!locals.me.error){ %> 
                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
                   <%= me.nom %>
@@ -48,6 +55,7 @@
                         </a>
                         <% } %>
                 </a>
+                
                 <ul class="dropdown-menu MenuRes" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="/profil/update" id="changerprofil"><i class='far fa-edit class1'
                     style="color:red"></i>&nbsp;&nbsp;Modifier Mon profile</a></li>
@@ -72,8 +80,10 @@
                   <li><a class="dropdown-item" href="/logout" style="color: red;"> <i class='fas fa-sign-out-alt'
                     style="color:red"></i>&nbsp;&nbsp;Déconnexion</a></li>
                 </ul>
+                <% } %> 
                 <% console.log('----------mardi toto', locals.me) %>
-                  <% } else if (locals.me===undefined){ %>
+                  <% } %>
+                  <% if (locals.me===undefined){ %>
                     <% console.log('----------regarde', locals.me) %>
                       <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">Connectez-Vous</a>
@@ -82,6 +92,7 @@
                           style="color:red;">&#xe161;</span>&nbsp;&nbsp;Login</a></li>
                       </ul>
                       <% } %>
+                      <% console.log('-----------------ICI LOCALS--------------------',locals); %> 
 
           </li>
         </ul>
